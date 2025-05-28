@@ -1,0 +1,9 @@
+.icon-flags::after{
+    content: "";
+    position: relative;
+    height: 58%;
+    width: 1px;
+    margin-top: 6px;
+    background-color: #ddd;
+
+}
