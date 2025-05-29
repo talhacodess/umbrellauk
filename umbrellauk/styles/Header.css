@@ -7,3 +7,22 @@
     background-color: #ddd;
 
 }
+.phone::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: #d9d9d987;
+    top: 0;
+    margin-left: 50px;
+}
+.email::before{
+     content: '';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: #d9d9d987;
+    top: 0;
+    margin-left: 50px;
+
+}
