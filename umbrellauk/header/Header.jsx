@@ -9,12 +9,10 @@ import { FaFacebook, FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterest, FaT
 import { FaXTwitter, FaYoutube } from 'react-icons/fa6'
 import { SlCallOut } from "react-icons/sl";
 import { RiMenu3Line } from "react-icons/ri";
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import { IoCloseSharp } from "react-icons/io5";
-import { GiHamburgerMenu } from "react-icons/gi";
 import icon1 from '../src/assets/Automotive-Boxes.webp'
 
 
@@ -176,26 +174,50 @@ function Header() {
 
     <Container>
 
-      <div className='flex justify-center items-center'>
-          <div className='w-3/12'>
-      <Link to={"/"}> <img src="{Logo}" width={130} height={70} alt="" /></Link>
-       </div>
-       <div className='w-6/12 flex justify-center'>
-       <input placeholder='Search For Products' className='border-2 border-[#dddddd] rounded-[60px] md:w-[300px] h-[50px] p-2 bg-[#fff] w-[150px] lg:w-[400px] '/>
-       </div>
-       <div className='w-3/12 flex justify-center items-center space-x-2'>
+     <nav className='md:hidden lg:block hidden'>
+        <ul className='flex space-x-10 py-5'>
+          <li className='text-[13px] text-[#333333] font-semibold uppercase'>Home</li>
+          {categories.map((item,index)=>{
+            return (
+
+              <li key={index} className='text-[13px] text-[#333333] font-semibold uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
+
+                
+                setOpenIcon(index)
+              }}
+
+              onMouseLeave={()=>{setMegaOne(null)
+                setOpenIcon()
+              }}
+               >{item.category} {megaOne?.key===item?.key?<IoIosArrowUp size={15} />:<IoIosArrowDown size={15} />}  </li>
+            )
+          })}
+        
+         <Link > <li className='text-[13px] text-[#333333] font-semibold uppercase'>Portfolio</li></Link>
+          <li className='text-[13px] text-[#333333] font-semibold uppercase'>Blog</li>
+       <Link >    <li className='text-[13px] text-[#333333] font-semibold uppercase'>About Us</li></Link>
+         <Link > <li className='text-[13px] text-[#333333] font-semibold uppercase'>Contact Us</li></Link>
+        </ul>
        
-       <div className='space-x-5 '>
-       <div className='md:block lg:hidden block menu-triger'onClick={()=>{setOpen(!open)}}> {open?<IoCloseSharp size={25}/>:<GiHamburgerMenu  size={25} />} </div>
-        <div className='space-x-5 md:hidden lg:block hidden'>
-          {/* <Button children={'Reviews'} className='bg-white border-1' textColor='text-black' />
-        <Button children={'Get Quote'} /> */}
-        </div>
-       
-       
-      </div>
-       </div>
-      </div>
+      </nav>
+      {/** mega menu */}
+      {megaOne? <div className='flex max-w-[1200px] mx-auto justify-center items-center py-2'>
+          <div className='w-full relative'>
+          <div className='grid grid-cols-4 absolute bg-[#f7f7f7] w-full rounded-[8px] p-2 '>
+            {megaOne?.menu?.map((item,index)=>{
+              return(
+                <div className='flex items-center text-[13px] font-semibold'>
+                <img src={item.icon} alt="" width={40} height={20} /><span>{item.title}</span>
+              </div>
+
+              )
+            })}
+           
+            </div>
+          </div>
+          
+
+        </div>:null}
 
     </Container>
       
