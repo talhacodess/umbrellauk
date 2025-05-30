@@ -177,11 +177,11 @@ function Header() {
       <div className='flex justify-between'>
           <nav className='md:hidden lg:block hidden'>
         <ul className='flex space-x-4 py-5'>
-          <li className='text-[16px] text-[#000] font-medium uppercase'>Home</li>
+          <li className='text-[15px] text-[#000] font-semibold uppercase'>Home</li>
           {categories.map((item,index)=>{
             return (
 
-              <li key={index} className='text-[16px] text-[#000] font-medium uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
+              <li key={index} className='text-[15px] text-[#000] font-semibold uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
 
                 
                 setOpenIcon(index)
@@ -194,10 +194,10 @@ function Header() {
             )
           })}
         
-         <Link > <li className='text-[16px] text-[#000] font-medium uppercase'>Portfolio</li></Link>
-          <li className='text-[16px] text-[#000] font-medium uppercase'>Blog</li>
-       <Link >    <li className='text-[16px] text-[#000] font-medium uppercase'>About Us</li></Link>
-         <Link > <li className='text-[16px] text-[#000] font-medium uppercase'>Contact Us</li></Link>
+         <Link > <li className='text-[15px] text-[#000] font-semibold uppercase'>Portfolio</li></Link>
+          <li className='text-[15px] text-[#000] font-semibold uppercase'>Blog</li>
+       <Link >    <li className='text-[15px] text-[#000] font-semibold uppercase'>About Us</li></Link>
+         <Link > <li className='text-[15px] text-[#000] font-semibold uppercase'>Contact Us</li></Link>
         </ul>
 
         

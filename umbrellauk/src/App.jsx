@@ -1,14 +1,13 @@
 
 import Header from '../header/Header'
-import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-
+import Home from '../pages/home/Home'
 
 function App() {
 
   return (
     <>
     <Header/>
+    <Home/>
     
     </>
   )
