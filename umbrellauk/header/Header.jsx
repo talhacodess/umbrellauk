@@ -9,11 +9,86 @@ import { FaFacebook, FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterest, FaT
 import { FaXTwitter, FaYoutube } from 'react-icons/fa6'
 import { SlCallOut } from "react-icons/sl";
 import { RiMenu3Line } from "react-icons/ri";
+import { Link } from 'react-router';
+import { useState } from 'react';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+import { IoCloseSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import icon1 from '../src/assets/Automotive-Boxes.webp'
+
+
 
 
 
 
 function Header() {
+    const [megaOne,setMegaOne] = useState()
+   const [open,setOpen] = useState(false)
+  const [openIcon,setOpenIcon] =useState(null)
+  const categories = [
+      {
+        key:1,
+        category : "Box By Industry",
+        menu:[
+          {title: 'Automotive Boxes', icon:icon1},
+          {title: 'Apparel Boxes', icon:icon1},
+          {title: 'Beverage Boxes', icon:icon1},
+          {title: 'Bakery Boxes', icon:icon1},
+          {title: 'Candy Boxes', icon:icon1},
+          {title: 'Candle Boxes', icon:icon1},
+          {title: 'Cosmetic Boxes', icon:icon1},
+          {title: 'Coffee Boxes', icon:icon1},
+          {title: 'Insert Packaging', icon:icon1},
+          {title: 'Styles Boxes', icon:icon1},
+          {title: 'Retail Packaing', icon:icon1},
+          {title: 'Coffee Beans', icon:icon1},
+          {title: 'Apparrl', icon:icon1},
+        ]
+      },
+      { 
+        key:2,
+        category : "Material",
+        menu:[
+          {title: 'Auto Lock Boxes', icon:icon1},
+          {title: 'Burger Boxes', icon:icon1},
+          {title: 'Bookend Boxes', icon:icon1},
+          {title: 'Bakery Boxes', icon:icon1},
+          {title: 'Candy Boxes', icon:icon1},
+          {title: 'Candle Boxes', icon:icon1},
+          {title: 'Cosmetic Boxes', icon:icon1},
+          {title: 'Coffee Boxes', icon:icon1},
+        ]
+      },
+      {
+        key:3,
+        category : "shapes & Styles",
+        menu:[
+          {title: 'Automotive Boxes', icon:icon1},
+          {title: 'Apparel Boxes', icon:icon1},
+          {title: 'Beverage Boxes', icon:icon1},
+          {title: 'Bakery Boxes', icon:icon1},
+          {title: 'Candy Boxes', icon:icon1},
+          {title: 'Candle Boxes', icon:icon1},
+          {title: 'Cosmetic Boxes', icon:icon1},
+          {title: 'Coffee Boxes', icon:icon1},
+        ]
+      },
+      {
+        key:4,
+        category : "Sticker Labels & Others",
+        menu:[
+          {title: 'Automotive Boxes', icon:icon1},
+          {title: 'Apparel Boxes', icon:icon1},
+          {title: 'Beverage Boxes', icon:icon1},
+          {title: 'Bakery Boxes', icon:icon1},
+          {title: 'Candy Boxes', icon:icon1},
+          {title: 'Candle Boxes', icon:icon1},
+          {title: 'Cosmetic Boxes', icon:icon1},
+          {title: 'Coffee Boxes', icon:icon1},
+        ]
+      },
+    ]
   return (
     <>
     {/** top header Start */}
@@ -98,6 +173,31 @@ function Header() {
 
     </Container>
     {/** middle header End */}
+
+    <Container>
+
+      <div className='flex justify-center items-center'>
+          <div className='w-3/12'>
+      <Link to={"/"}> <img src="{Logo}" width={130} height={70} alt="" /></Link>
+       </div>
+       <div className='w-6/12 flex justify-center'>
+       <input placeholder='Search For Products' className='border-2 border-[#dddddd] rounded-[60px] md:w-[300px] h-[50px] p-2 bg-[#fff] w-[150px] lg:w-[400px] '/>
+       </div>
+       <div className='w-3/12 flex justify-center items-center space-x-2'>
+       
+       <div className='space-x-5 '>
+       <div className='md:block lg:hidden block menu-triger'onClick={()=>{setOpen(!open)}}> {open?<IoCloseSharp size={25}/>:<GiHamburgerMenu  size={25} />} </div>
+        <div className='space-x-5 md:hidden lg:block hidden'>
+          {/* <Button children={'Reviews'} className='bg-white border-1' textColor='text-black' />
+        <Button children={'Get Quote'} /> */}
+        </div>
+       
+       
+      </div>
+       </div>
+      </div>
+
+    </Container>
       
       </>
 
