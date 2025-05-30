@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import icon1 from '../src/assets/Automotive-Boxes.webp'
+import Button from '../components/Button'
 
 
 
@@ -173,14 +174,14 @@ function Header() {
     {/** middle header End */}
 
     <Container>
-
-     <nav className='md:hidden lg:block hidden'>
-        <ul className='flex space-x-10 py-5'>
-          <li className='text-[13px] text-[#333333] font-semibold uppercase'>Home</li>
+      <div className='flex justify-between'>
+          <nav className='md:hidden lg:block hidden'>
+        <ul className='flex space-x-4 py-5'>
+          <li className='text-[16px] text-[#000] font-medium uppercase'>Home</li>
           {categories.map((item,index)=>{
             return (
 
-              <li key={index} className='text-[13px] text-[#333333] font-semibold uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
+              <li key={index} className='text-[16px] text-[#000] font-medium uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
 
                 
                 setOpenIcon(index)
@@ -193,15 +194,23 @@ function Header() {
             )
           })}
         
-         <Link > <li className='text-[13px] text-[#333333] font-semibold uppercase'>Portfolio</li></Link>
-          <li className='text-[13px] text-[#333333] font-semibold uppercase'>Blog</li>
-       <Link >    <li className='text-[13px] text-[#333333] font-semibold uppercase'>About Us</li></Link>
-         <Link > <li className='text-[13px] text-[#333333] font-semibold uppercase'>Contact Us</li></Link>
+         <Link > <li className='text-[16px] text-[#000] font-medium uppercase'>Portfolio</li></Link>
+          <li className='text-[16px] text-[#000] font-medium uppercase'>Blog</li>
+       <Link >    <li className='text-[16px] text-[#000] font-medium uppercase'>About Us</li></Link>
+         <Link > <li className='text-[16px] text-[#000] font-medium uppercase'>Contact Us</li></Link>
         </ul>
+
+        
        
       </nav>
+      <div className='md:hidden lg:block hidden'><Button className='text-[#fff]' children={"Review"}/></div>
+      <div className='md:hidden lg:block hidden'><Button className=' bg-[#fff] border-1 border-[#293453]' children={"Get Quote"}/></div>
+
+      </div>
+
+   
       {/** mega menu */}
-      {megaOne? <div className='flex max-w-[1200px] mx-auto justify-center items-center py-2'>
+      {megaOne? <Container>
           <div className='w-full relative'>
           <div className='grid grid-cols-4 absolute bg-[#f7f7f7] w-full rounded-[8px] p-2 '>
             {megaOne?.menu?.map((item,index)=>{
@@ -217,7 +226,7 @@ function Header() {
           </div>
           
 
-        </div>:null}
+        </Container>:null}
 
     </Container>
       
