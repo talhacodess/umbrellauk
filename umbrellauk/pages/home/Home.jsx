@@ -3,6 +3,7 @@ import Container from '../../components/Container'
 import Button from '../../components/Button'
 import banner from '../../src/assets/banner.png'
 import shipping from '../../src/assets/free-shipping.png'
+import '../../styles/Home.css'
 
 
 
@@ -26,55 +27,28 @@ function Home() {
    </Container>
    </div>
    {/**Banner Section End */}
+   {/**Icons banner Start */}
    <div className='bg-[#f3f3f3]'>
 
     <Container>
-        <div className='grid grid-cols-4'>
-            <div className=' relative phone '>
-                      <div className='flex justify-center items-center gap-5'>
-                        <div className='w-4/12 flex  justify-end'><img src={shipping} width={60} height={45} alt="" /></div>
+        <div className='grid sm:grid-cols-4 p-2 grid-cols-2 gap-1'>
+            <div className=' relative icon-banner '>
+                      <div className='flex sm:flex-row flex-col justify-center items-center gap-5 sm:text-start text-center'>
+                        <div className='w-4/12 flex justify-center sm:justify-end'><img src={shipping} width={60} height={45} alt="" /></div>
                         <div className='w-8/12'>
-                        <span className='text-[14px] text-[#2e2e2d] font-normal'>Free Shipping & Return</span>
-                        <p className='text-[#293453] text-[18px] font-semibold'>Free shipping on orders over $99</p>
+                        <span className='text-[#293453]  sm:text-[12px] md:text-[15px] text-[18px] font-semibold'>Free Shipping & Return</span>
+                        <p className='sm:text-[14px] text-[10px] text-[#2e2e2d]  font-normal'>Free shipping on orders over $99</p>
                          </div>
             
                       </div>
                       </div>
-            <div className=' relative phone '>
-                      <div className='flex justify-center items-center gap-5'>
-                        <div className='w-4/12 flex  justify-end'><img src={shipping} width={60} height={45} alt="" /></div>
-                        <div className='w-8/12'>
-                        <span className='text-[14px] text-[#2e2e2d] font-normal'>Free Shipping & Return</span>
-                        <p className='text-[#293453] text-[18px] font-semibold'>Free shipping on orders over $99</p>
-                         </div>
-            
-                      </div>
-                      </div>
-            <div className=' relative phone '>
-                      <div className='flex justify-center items-center gap-5'>
-                        <div className='w-4/12 flex  justify-end'><img src={shipping} width={60} height={45} alt="" /></div>
-                        <div className='w-8/12'>
-                        <span className='text-[14px] text-[#2e2e2d] font-normal'>Free Shipping & Return</span>
-                        <p className='text-[#293453] text-[18px] font-semibold'>Free shipping on orders over $99</p>
-                         </div>
-            
-                      </div>
-                      </div>
-            <div className=' relative phone '>
-                      <div className='flex justify-center items-center gap-5'>
-                        <div className='w-4/12 flex  justify-end'><img src={shipping} width={60} height={45} alt="" /></div>
-                        <div className='w-8/12'>
-                        <span className='text-[14px] text-[#2e2e2d] font-normal'>Free Shipping & Return</span>
-                        <p className='text-[#293453] text-[18px] font-semibold'>Free shipping on orders over $99</p>
-                         </div>
-            
-                      </div>
-                      </div>
+          
             </div> 
 
         </Container>    
 
    </div>
+   {/**Icons banner End*/}
    
   
  

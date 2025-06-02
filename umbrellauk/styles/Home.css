@@ -1,9 +1,34 @@
-.phone::before{
+.icon-banner::before {
     content: '';
     position: absolute;
     width: 2px;
     height: 50px;
     background-color: #d9d9d987;
     top: 0;
-    margin-left: 50px;
+    margin-left: 20px;
+}
+@media only screen and (max-width:768px){
+    .icon-banner::before {
+    content: '';
+    position: absolute;
+    width: 0px !important;
+    height: 0px !important;
+    background-color: #f3f3f3 !important;
+    top: 0;
+    margin-left: 20px;
+}
+
+}
+@media only screen and (max-width:1024px){
+    .icon-banner::before {
+    content: '';
+    position: absolute;
+    width: 2px !important;
+    height: 50px !important;
+    background-color: #d9d9d987;
+    top: 20px;
+    left: -20px;
+    margin-left: 20px;
+}
+
 }
