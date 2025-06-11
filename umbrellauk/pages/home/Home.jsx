@@ -8,6 +8,7 @@ import secured from '../../src/assets/securd-payment-1.png'
 import money from '../../src/assets/money-back-gurantee-1.png'
 import windowboxes from '../../src/assets/Window-Boxes.webp'
 import '../../styles/Home.css'
+import Form from '../../components/multiForm/Form'
 
 const categories = [
   {title:"Window Boxes",img:windowboxes},
@@ -116,6 +117,21 @@ function Home() {
 
    </Container>
    {/**Categories section End*/}
+   {/**Form section Start*/}
+   <div className='bg-[#f3f3f3]'>
+     <Container>
+   
+
+    <div className='text-center space-y-5 py-[50px]'>
+       <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Get Instant Price Quote</h2>
+    </div>
+     <Form/>
+
+   </Container>
+
+   </div>
+  
+   {/**Form section End*/}
    
   
  
