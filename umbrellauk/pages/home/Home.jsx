@@ -7,8 +7,10 @@ import customer from '../../src/assets/customer-support-1.png'
 import secured from '../../src/assets/securd-payment-1.png'
 import money from '../../src/assets/money-back-gurantee-1.png'
 import windowboxes from '../../src/assets/Window-Boxes.webp'
+import infographics from '../../src/assets/infographics-uk-1.webp'
 import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
+import ProductCard from '../../components/products/ProductCard'
 
 const categories = [
   {title:"Window Boxes",img:windowboxes},
@@ -132,6 +134,26 @@ function Home() {
    </div>
   
    {/**Form section End*/}
+   {/**Products section Start*/}
+    <div className='text-center space-y-5 py-[50px]'>
+       <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Trending & Popular Products</h2>
+    <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Explore Umbrella Custom Packaging’s wide variety of customizable boxes. Choose your ideal size, material, and design to create the perfect packaging solution.</p>
+    <ProductCard/>
+
+    </div>
+   {/**Products section End*/}
+   {/**How it works section sTART*/}
+   <div className='bg-[#f3f3f3]'>
+
+    <div className='grid grid-cols-2'>
+      <div></div>
+      <div><img src={infographics} alt="" width={560} height={670} /></div>
+
+    </div>
+
+   </div>
+
+   {/**How it works section end*/}
    
   
  

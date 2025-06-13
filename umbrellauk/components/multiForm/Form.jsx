@@ -5,6 +5,8 @@ import ProductDetail from './ProductDetail'
 
 function Form() {
     const [page,setPage] = useState(0)
+    console.log(page,'Page')
+    console.log(setPage,"setpage")
     const [formData,setFormData] = useState({
     // Personal Information Field
         fullName:"",
@@ -12,8 +14,21 @@ function Form() {
         email: "",
         phoneNumber:"",
     // Product Specification
+    boxStyle:'',
+    lengthBox:'',
+    widthBox:'',
+    depthBox:'',
+    unitBox:'',
+    stockBox:'',
+    colorBox:'',
+    printingBox:'',
+    quantityBox:'',
+    addonBox:'',
+    uploadBox:'',
+    descBox:'',
 
-    
+
+
     })
     
 
@@ -40,10 +55,12 @@ function Form() {
             </div>
             <div className='footer flex justify-between mt-3'>
                 <Button 
+                className='text-white'
                 onClick={()=>{setPage((curPage)=>curPage -1)}}
                 disabled={page === 0} 
                 children={"Prev"}/>
                 <Button
+                className='text-white'
                  onClick={()=>{
                     if(page ===1){
                         alert("Your Form Is submit")
