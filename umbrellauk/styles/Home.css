@@ -7,6 +7,13 @@
     top: 0;
     margin-left: 20px;
 }
+.standard-bg{
+    background-image: url("../src/assets/shape-png.png");
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 45% auto;
+    padding: 200px 200px;
+}
 @media only screen and (max-width:768px){
     .icon-banner::before {
     content: '';

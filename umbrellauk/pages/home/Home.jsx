@@ -14,6 +14,7 @@ import wicon3 from '../../src/assets/w-icon3.png'
 import wicon4 from '../../src/assets/w-icon4.png'
 import wicon5 from '../../src/assets/w-icon5.png'
 import wicon6 from '../../src/assets/w-icon6.png'
+import strandard from '../../src/assets/standards-banner.webp'
 import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
@@ -210,6 +211,29 @@ function Home() {
 
       </Container>
       {/**Material Guide end*/}
+      {/**We Fulfil the standards Start*/}
+
+     
+        <div className='standard-bg'>
+          <Container>
+              <div className='grid grid-cols-2'>
+
+          <div>
+            <img src={strandard} width={470} height={270} alt="" className='rounded-lg' />
+
+          </div>
+
+        </div>
+
+          </Container>
+          
+
+        </div>
+      
+
+    
+
+      {/**We Fulfil the standards  end*/}
 
 
 
