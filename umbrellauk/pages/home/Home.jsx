@@ -19,6 +19,7 @@ import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
 import MaterialTabs from '../../components/MaterialTabs'
+import { FaCircleNotch } from "react-icons/fa";
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -216,11 +217,39 @@ function Home() {
      
         <div className='standard-bg'>
           <Container>
-              <div className='grid grid-cols-2'>
+              <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-5'>
 
-          <div>
+          <div className='flex justify-end items-center'>
             <img src={strandard} width={470} height={270} alt="" className='rounded-lg' />
 
+          </div>
+          <div className='space-y-4'>
+                <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>We Fulfil the standards</span> of the Packaging Industry.</h2>
+                  <p className='text-[#333333] md:text-lg text-sm text-left'>Umbrella Custom Packaging follows strict standards, much like a recipe, ensuring each box is the right size, crafted from top-quality materials, and designed to perfection. With attention to detail and quality control, they deliver custom boxes that are both reliable and customized to your preferences.</p>
+                  <div className='grid md:grid-cols-2 grid-cols-1 gap-5  '>
+                    <div >
+                  <div className='flex space-x-2 items-center mt-10'><FaCircleNotch /><span className='text-[16px]'>Select/provide the Box style</span></div>
+                  <div className='flex space-x-2 items-center '> <FaCircleNotch /><span className='text-[16px]'>Provide the Box Dimensions/Size</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  </div>
+                    <div>
+                  <div className='flex space-x-2 items-center mt-10'><FaCircleNotch /><span className='text-[16px]'>Select/provide the Box style</span></div>
+                  <div className='flex space-x-2 items-center '> <FaCircleNotch /><span className='text-[16px]'>Provide the Box Dimensions/Size</span></div>
+                  <div className='flex space-x-2 items-center group '><FaCircleNotch className=' group-hover:scale-125' /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
+                  </div>
+                  </div>
           </div>
 
         </div>
