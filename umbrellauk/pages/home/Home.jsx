@@ -20,6 +20,7 @@ import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
 import MaterialTabs from '../../components/MaterialTabs'
 import { FaCircleNotch } from "react-icons/fa";
+import ProductPresentation from '../../components/ProductPresentation'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -213,8 +214,6 @@ function Home() {
       </Container>
       {/**Material Guide end*/}
       {/**We Fulfil the standards Start*/}
-
-     
         <div className='standard-bg'>
           <Container>
               <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-5'>
@@ -258,11 +257,23 @@ function Home() {
           
 
         </div>
-      
+      {/**We Fulfil the standards  end*/}
+      {/**Product Presentation Start*/}
+      <div className='bg-[#f3f3f3]'>
+          <Container>
+        <div className='text-center space-y-5 py-[50px]'>
+          <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Enhance Your Product Presentation with Our Special Packaging Features</h2>
+          <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative packaging a try for your stuff! We’ve come up with cool add-ons options like embossing, debossing, silver and gold foiling, spot UV and holographic to make your products look awesome. It’s like dressing up your things in a special way. Just see how it makes your stuff stand out! Try it, and you’ll love how great your products can look!</p>
 
+          <ProductPresentation/>
+
+        </div>
+      </Container>
+
+      </div>
     
 
-      {/**We Fulfil the standards  end*/}
+      {/**Product Presentation end*/}
 
 
 
