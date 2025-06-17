@@ -14,6 +14,33 @@
     background-size: 45% auto;
     padding: 50px 0 50px;
 }
+.swiper-button-next {
+    background-color: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+}
+.swiper-button-next::after{
+    
+    font-size: 28px !important;
+    font-weight: bold;
+     color: #ff931e;
+
+
+}
+.swiper-button-prev {
+    background-color: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+}
+.swiper-button-prev::after{
+    
+    font-size: 28px !important;
+    font-weight: bold;
+     color: #ff931e;
+
+
+}
+
 @media only screen and (max-width:768px){
     .icon-banner::before {
     content: '';

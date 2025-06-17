@@ -20,7 +20,10 @@ import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
 import MaterialTabs from '../../components/MaterialTabs'
 import { FaCircleNotch } from "react-icons/fa";
+import { TbHandFingerRight } from "react-icons/tb";
 import ProductPresentation from '../../components/ProductPresentation'
+import TemplateSlider from '../../components/TemplateSlider'
+import ProductionUnits from '../../components/ProductionUnits'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -207,26 +210,26 @@ function Home() {
           <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Let’s explore the Types of Materials for Your Unique Packaging.</p>
 
           {/** Material tabs */}
-          <MaterialTabs/>
+          <MaterialTabs />
 
         </div>
 
       </Container>
       {/**Material Guide end*/}
       {/**We Fulfil the standards Start*/}
-        <div className='standard-bg'>
-          <Container>
-              <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-5'>
+      <div className='standard-bg'>
+        <Container>
+          <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-5'>
 
-          <div className='flex justify-end items-center'>
-            <img src={strandard} width={470} height={270} alt="" className='rounded-lg' />
+            <div className='flex justify-end items-center'>
+              <img src={strandard} width={470} height={270} alt="" className='rounded-lg' />
 
-          </div>
-          <div className='space-y-4'>
-                <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>We Fulfil the standards</span> of the Packaging Industry.</h2>
-                  <p className='text-[#333333] md:text-lg text-sm text-left'>Umbrella Custom Packaging follows strict standards, much like a recipe, ensuring each box is the right size, crafted from top-quality materials, and designed to perfection. With attention to detail and quality control, they deliver custom boxes that are both reliable and customized to your preferences.</p>
-                  <div className='grid md:grid-cols-2 grid-cols-1 gap-5  '>
-                    <div >
+            </div>
+            <div className='space-y-4'>
+              <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>We Fulfil the standards</span> of the Packaging Industry.</h2>
+              <p className='text-[#333333] md:text-lg text-sm text-left'>Umbrella Custom Packaging follows strict standards, much like a recipe, ensuring each box is the right size, crafted from top-quality materials, and designed to perfection. With attention to detail and quality control, they deliver custom boxes that are both reliable and customized to your preferences.</p>
+              <div className='grid md:grid-cols-2 grid-cols-1 gap-5  '>
+                <div >
                   <div className='flex space-x-2 items-center mt-10'><FaCircleNotch /><span className='text-[16px]'>Select/provide the Box style</span></div>
                   <div className='flex space-x-2 items-center '> <FaCircleNotch /><span className='text-[16px]'>Provide the Box Dimensions/Size</span></div>
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
@@ -236,8 +239,8 @@ function Home() {
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
-                  </div>
-                    <div>
+                </div>
+                <div>
                   <div className='flex space-x-2 items-center mt-10'><FaCircleNotch /><span className='text-[16px]'>Select/provide the Box style</span></div>
                   <div className='flex space-x-2 items-center '> <FaCircleNotch /><span className='text-[16px]'>Provide the Box Dimensions/Size</span></div>
                   <div className='flex space-x-2 items-center group '><FaCircleNotch className=' group-hover:scale-125' /><span className='text-[16px]'>Share your additional thoughts</span></div>
@@ -247,33 +250,63 @@ function Home() {
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
                   <div className='flex space-x-2 items-center '><FaCircleNotch /><span className='text-[16px]'>Share your additional thoughts</span></div>
-                  </div>
-                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-        </div>
+        </Container>
 
-          </Container>
-          
 
-        </div>
+      </div>
       {/**We Fulfil the standards  end*/}
       {/**Product Presentation Start*/}
       <div className='bg-[#f3f3f3]'>
-          <Container>
-        <div className='text-center space-y-5 py-[50px]'>
-          <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Enhance Your Product Presentation with Our Special Packaging Features</h2>
-          <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative packaging a try for your stuff! We’ve come up with cool add-ons options like embossing, debossing, silver and gold foiling, spot UV and holographic to make your products look awesome. It’s like dressing up your things in a special way. Just see how it makes your stuff stand out! Try it, and you’ll love how great your products can look!</p>
+        <Container>
+          <div className='text-center space-y-5 py-[50px]'>
+            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Enhance Your Product Presentation with Our Special Packaging Features</h2>
+            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative packaging a try for your stuff! We’ve come up with cool add-ons options like embossing, debossing, silver and gold foiling, spot UV and holographic to make your products look awesome. It’s like dressing up your things in a special way. Just see how it makes your stuff stand out! Try it, and you’ll love how great your products can look!</p>
 
-          <ProductPresentation/>
+            <ProductPresentation />
+
+          </div>
+        </Container>
+
+      </div>
+
+
+      {/**Product Presentation end*/}
+      {/**Box Template start*/}
+      <Container>
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-10 my-5'>
+          <div>
+            <TemplateSlider />
+          </div>
+          <div className='flex flex-col items-start justify-center space-y-5'>
+            <h2 className='md:text-[36px] text-[25px] font-semibold  '>Need Box Template to design?</h2>
+            <p className='text-[#333333] md:text-lg text-sm text-left'>Get a quick template file from us, where you can put your design and save some good time. You can also send us the artwork to input in a template and send it your way for your vision.<br />
+              Making boxes just the right size, building creative structure, or enhance functionality is simple. Just Provide Following Information.</p>
+            <div className='flex space-x-1 items-center mt-10'><TbHandFingerRight size={20} /><span className='text-[16px]'>Select/provide the Box style</span></div>
+            <div className='flex space-x-1 items-center '><TbHandFingerRight size={20} /><span className='text-[16px]'>Provide the Box Dimensions/Size</span></div>
+            <div className='flex space-x-1 items-center '><TbHandFingerRight size={20} /><span className='text-[16px]'>Share your additional thoughts</span></div>
+          </div>
+
 
         </div>
       </Container>
 
-      </div>
-    
+      {/**Box Template end*/}
+      {/**Production Units Start*/}
+      <div className='bg-[#f7f7f7]'>
+        <Container>
+          <ProductionUnits />
 
-      {/**Product Presentation end*/}
+        </Container>
+
+
+      </div>
+      {/**Production Units end*/}
 
 
 
