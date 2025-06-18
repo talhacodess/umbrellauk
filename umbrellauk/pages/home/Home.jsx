@@ -23,7 +23,7 @@ import gallery6 from '../../src/assets/gallery6.webp'
 import gallery7 from '../../src/assets/gallery7.webp'
 import gallery8 from '../../src/assets/gallery8.webp'
 import gallery9 from '../../src/assets/gallery9.webp'
-import strandard from '../../src/assets/standards-banner.webp'    
+import strandard from '../../src/assets/standards-banner.webp'
 import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
@@ -47,24 +47,15 @@ const categories = [
 ]
 
 const galleryImages = [
-  
-  
-{img:gallery2},
-  {img:gallery1},
-  
-  {img:gallery3},
-   {img:gallery5},
-   {img:gallery8},
-     {img:gallery6},
-   {img:gallery9},
-    {img:gallery7},
-  
-  {img:gallery4},
- 
-
- 
-  
-  
+  { img: gallery2 },
+  { img: gallery1 },
+  { img: gallery3 },
+  { img: gallery5 },
+  { img: gallery8 },
+  { img: gallery6 },
+  { img: gallery9 },
+  { img: gallery7 },
+  { img: gallery4 },
 ]
 
 
@@ -298,9 +289,8 @@ function Home() {
             <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Enhance Your Product Presentation with Our Special Packaging Features</h2>
             <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative packaging a try for your stuff! We’ve come up with cool add-ons options like embossing, debossing, silver and gold foiling, spot UV and holographic to make your products look awesome. It’s like dressing up your things in a special way. Just see how it makes your stuff stand out! Try it, and you’ll love how great your products can look!</p>
 
-            <ProductPresentation />
-
           </div>
+          <ProductPresentation />
         </Container>
 
       </div>
@@ -339,6 +329,12 @@ function Home() {
       {/**Production Units end*/}
       {/**Inspiration Start*/}
       <Container>
+          <div className='text-center space-y-5 py-[50px]'>
+            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Inspiration for Creative Packaging</h2>
+            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Umbrella Custom Packaging loves thinking up innovative and cool ideas. Our design department designs stuff for us always tries to make packaging that’s super creative. They want it to be different and exciting, like making a surprise just for you! They believe in using clever ideas to make your things look amazing.</p>
+
+          </div>
+
         <InspirationGallery galleryImages={galleryImages} />
 
       </Container>

@@ -30,17 +30,15 @@ function InspirationGallery({galleryImages}) {
             <IoClose className='btnClose' onClick={()=> handleCloseBtn()} />
             <FaCircleArrowLeft className='btnPrev' onClick={()=>prevSlide()} />
             <FaCircleArrowRight  className='btnNext' onClick={()=> nextSlide()} />
-            <div className='fullScreenImage'>
-                <img src={galleryImages[sliderNumber].img} alt="" />
+              <div className='slideNumber'>{sliderNumber}</div>  
+              <div className='fullScreenImage'>
+                <img src={galleryImages[sliderNumber].img} className='rounded shadow' height={600} width={600}  alt="" />
 
             </div>
         </div> 
 
         }
-        <br/>
-        current Slide number: {sliderNumber}
-        <br/>
-        Total Slides:{galleryImages.length}
+   
 
         <div className='gallerywrap '>
             {galleryImages && galleryImages.map((slide,index)=>{
