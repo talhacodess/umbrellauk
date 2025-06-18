@@ -14,7 +14,16 @@ import wicon3 from '../../src/assets/w-icon3.png'
 import wicon4 from '../../src/assets/w-icon4.png'
 import wicon5 from '../../src/assets/w-icon5.png'
 import wicon6 from '../../src/assets/w-icon6.png'
-import strandard from '../../src/assets/standards-banner.webp'
+import gallery1 from '../../src/assets/gallery1.webp'
+import gallery2 from '../../src/assets/gallery2.webp'
+import gallery3 from '../../src/assets/gallery3.webp'
+import gallery4 from '../../src/assets/gallery4.webp'
+import gallery5 from '../../src/assets/gallery5.webp'
+import gallery6 from '../../src/assets/gallery6.webp'
+import gallery7 from '../../src/assets/gallery7.webp'
+import gallery8 from '../../src/assets/gallery8.webp'
+import gallery9 from '../../src/assets/gallery9.webp'
+import strandard from '../../src/assets/standards-banner.webp'    
 import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
@@ -24,6 +33,7 @@ import { TbHandFingerRight } from "react-icons/tb";
 import ProductPresentation from '../../components/ProductPresentation'
 import TemplateSlider from '../../components/TemplateSlider'
 import ProductionUnits from '../../components/ProductionUnits'
+import InspirationGallery from '../../components/InspirationGallery'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -36,6 +46,26 @@ const categories = [
   { title: "Window Boxes", img: windowboxes },
 ]
 
+const galleryImages = [
+  
+  
+{img:gallery2},
+  {img:gallery1},
+  
+  {img:gallery3},
+   {img:gallery5},
+   {img:gallery8},
+     {img:gallery6},
+   {img:gallery9},
+    {img:gallery7},
+  
+  {img:gallery4},
+ 
+
+ 
+  
+  
+]
 
 
 function Home() {
@@ -307,6 +337,12 @@ function Home() {
 
       </div>
       {/**Production Units end*/}
+      {/**Inspiration Start*/}
+      <Container>
+        <InspirationGallery galleryImages={galleryImages} />
+
+      </Container>
+      {/**Inspiration end*/}
 
 
 
