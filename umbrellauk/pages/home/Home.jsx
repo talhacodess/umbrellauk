@@ -34,6 +34,7 @@ import ProductPresentation from '../../components/ProductPresentation'
 import TemplateSlider from '../../components/TemplateSlider'
 import ProductionUnits from '../../components/ProductionUnits'
 import InspirationGallery from '../../components/InspirationGallery'
+import SimpleSteps from '../../components/SimpleSteps'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -339,6 +340,19 @@ function Home() {
 
       </Container>
       {/**Inspiration end*/}
+      {/**Simple Steps Start*/}
+        <div className='bg-[#f3f3f3]'>
+        <Container>
+          <div className='text-center space-y-5 py-[50px]'>
+            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Simple Steps to get the Custom Packaging Produced</h2>
+            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative Following are few steps which provide the complete Guide.</p>
+
+          </div>
+          <SimpleSteps/>
+        </Container>
+
+      </div>
+      {/**Simple Steps end*/}
 
 
 
