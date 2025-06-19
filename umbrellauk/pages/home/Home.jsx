@@ -368,6 +368,33 @@ function Home() {
         </Container>
       </div>
       {/**REVIEW SECTION end*/}
+      {/**Top 10 Packaging Start*/}
+      <div className='bg-[#f3f3f3]'>
+       <Container>
+  <div className="max-h-[600px] overflow-y-auto p-10">
+  <h3 className='text-4xl font-semibold mb-5'>Top 10 Packaging Design Trends for 2024:</h3>
+  <p className='text-lg font-medium leading-8 text-[#333333]'>Packaging has changed a lot since it first started as a way to keep things safe and move them around. Even though maintaining safe things is still important, some new and cool things are happening with packaging.<br/>
+Now, in the year 2024, packaging is getting even better. This is because of new technology, what people like, and the need to care for our planet.
+When a new year starts, businesses need to know the newest ways to wrap up and protect their stuff. When you get new toys or clothes, you want them to be in the coolest and best packaging! <br />
+So, in 2024, packaging is changing because of new gadgets, what people prefer, and the important job of making sure we’re kind to our Earth. It’s like a race for businesses to keep up with the latest and greatest ways to wrap things up and make them look awesome! <br />
+Hey there! So, the packaging is like the cool wrapping around stuff we buy. Back in the day, it was to keep things safe, but now it’s doing much more! <br />
+<b>1. Good for Earth:</b> People are really into using materials that are good for the Earth. This is called the “sustainability movement,” it’s like a big team effort to take care of our planet. In 2024, more and more people and companies are choosing materials that are kind to the Earth. They might use plastics that can be used repeatedly, packaging made from plants, or things that can be recycled. Suppose a company decides to use these Earth-friendly materials for their packaging. In that case, it makes people who care about the environment happy. It’s like giving a thumbs up to businesses that are good for our planet! <br />
+
+<b>2. Simple and Earthy Designs:</b> Imagine the cool designs on your toys or snacks. Well, in 2024, they’re choosing easy designs that remind you of nature. It’s like using calm and nice colors, not too flashy. But it’s not just about looking pretty – it’s also a way of saying, “Hey, I want to take care of our Earth!” So, when you see simple and earthy designs, it’s like a little message from the company saying they care about our planet. <br />
+<b>3. Smart Packaging:</b> Some packages are like magic! They can talk to your phone or show you cool things using special codes or pictures. <br />
+<b>4. Ink and Printing Being Earth-Friendly:</b> Even the colors and pictures on packages, try to be kind to the Earth! In 2024, the people who make the ink and print things are changing how they do it. They’re using inks made from soy, like a plant, and methods that don’t hurt the environment. This is becoming popular because it helps make packaging without causing too much trouble for our planet. <br />
+<b>5. Packaging Fun:</b> Imagine when you open a box of your favorite things; it feels like starting a super cool adventure! In 2024, companies want it to be really fun and exciting when you open their packages. It’s not just about hiding what’s inside; they want you to have a great time when you discover what’s in there. So, it’s not just a box; it’s like opening up a surprise that makes you happy and excited! <br />
+<b>6. Your Special Package:</b> People like it when things feel special just for them. Imagine if the packaging on your favorite toys or snacks had your name or a cool design just for you! In 2024, companies will use information about you, like what you like and enjoy, to make unique packaging. They use fancy printing tricks with computers to create these special packages. Getting something with your name or a special design makes you feel important and happy. So, businesses are doing this to make customers feel extra special and valued. It’s like getting a present every time you open a box! <br />
+<b>7. See-Through Labels:</b> People like to know everything about what they’re buying. So, imagine if the labels tell you everything when you pick up your favorite snacks or toys! Like where it’s from, what’s inside, and if it’s good for the Earth. In 2024, brands realize that giving all this information builds customer trust. It’s like when someone is honest and tells you everything – you trust them more, right? So, companies are putting all the details on their labels to make customers happy and feel good about what they’re getting. It’s like being a detective and finding out all the cool facts about your favorite stuff! <br />
+<b>8. Easy to Close and Use Again:</b> Some packages can close again. So, if you don’t finish all the cookies, you can keep them fresh for later. Cool, right? <br />
+<b>9. Different and Cool Shapes:</b> Imagine if your cereal box wasn’t square but had a crazy shape. That’s what brands are doing now to make things more interesting. <br />
+<b>10. Earth-Friendly Shipping:</b> Taking care of our planet isn’t just for the stores; it’s also when things get sent to your home. In 2024, using materials and sending items good for the Earth are becoming super important. And companies are figuring out how to pack things in a way that only makes a little extra waste and it’s not too expensive to send. So, when you get a package, it’s like getting a little Earth-friendly present at your doorstep!</p> <br />
+  </div>
+</Container>
+
+
+      </div>
+      {/**Top 10 Packaging end*/}
 
 
 
