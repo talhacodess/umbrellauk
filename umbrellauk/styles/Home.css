@@ -41,7 +41,7 @@
 
 }
 .bg-review{
-    background-image: url("../src/assets/background-image.webp") OP;
+    background-image: url("../src/assets/background-image.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
