@@ -24,6 +24,7 @@ import gallery7 from '../../src/assets/gallery7.webp'
 import gallery8 from '../../src/assets/gallery8.webp'
 import gallery9 from '../../src/assets/gallery9.webp'
 import strandard from '../../src/assets/standards-banner.webp'
+import agent from '../../src/assets/call-agent.png'
 import '../../styles/Home.css'
 import Form from '../../components/multiForm/Form'
 import ProductCard from '../../components/products/ProductCard'
@@ -395,6 +396,16 @@ Hey there! So, the packaging is like the cool wrapping around stuff we buy. Back
 
       </div>
       {/**Top 10 Packaging end*/}
+      {/**Frequently Asked Questions Start*/}
+      <Container className='py-10'>
+        <div className='bg-[#FFD7AC] h-[65px]  relative w-full rounded'><img src={agent} width={125} height={125} alt="" className=' absolute top-[-50%] right-[50%] ' /></div>
+        <div className='my-10'>
+            <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center '>Frequently Asked Questions</h2>
+
+        </div>
+      </Container>
+
+      {/**Frequently Asked Questions end*/ }
 
 
 
