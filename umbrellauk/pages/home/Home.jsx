@@ -35,6 +35,7 @@ import TemplateSlider from '../../components/TemplateSlider'
 import ProductionUnits from '../../components/ProductionUnits'
 import InspirationGallery from '../../components/InspirationGallery'
 import SimpleSteps from '../../components/SimpleSteps'
+import Review from '../../components/reviews/Review'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -353,6 +354,20 @@ function Home() {
 
       </div>
       {/**Simple Steps end*/}
+      {/**REVIEW SECTION START*/}
+      <div className='py-10 bg-review'>
+        <Container>
+          <div className='space-y-3 flex  flex-col justify-center items-center mb-5'>
+              <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>Customer</span>  Reviews</h2>
+              <p className='text-[#333333] md:text-lg text-sm text-left'>Real customer feedback to guide your purchase decisions.</p>
+              
+          </div>
+            <Review/>
+
+        
+        </Container>
+      </div>
+      {/**REVIEW SECTION end*/}
 
 
 
