@@ -37,6 +37,9 @@ import ProductionUnits from '../../components/ProductionUnits'
 import InspirationGallery from '../../components/InspirationGallery'
 import SimpleSteps from '../../components/SimpleSteps'
 import Review from '../../components/reviews/Review'
+import FaqCom from '../../components/FaqCom'
+import { Link } from 'react-router-dom'
+import Blogs from '../../components/blog/Blogs'
 
 const categories = [
   { title: "Window Boxes", img: windowboxes },
@@ -61,6 +64,7 @@ const galleryImages = [
   { img: gallery4 },
 ]
 
+const email = <Link to={'mailto:sales@umbrellapackaging.com.'}>sales@umbrellapackaging.com.</Link>
 
 function Home() {
   return (
@@ -332,25 +336,25 @@ function Home() {
       {/**Production Units end*/}
       {/**Inspiration Start*/}
       <Container>
-          <div className='text-center space-y-5 py-[50px]'>
-            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Inspiration for Creative Packaging</h2>
-            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Umbrella Custom Packaging loves thinking up innovative and cool ideas. Our design department designs stuff for us always tries to make packaging that’s super creative. They want it to be different and exciting, like making a surprise just for you! They believe in using clever ideas to make your things look amazing.</p>
+        <div className='text-center space-y-5 py-[50px]'>
+          <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Inspiration for Creative Packaging</h2>
+          <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Umbrella Custom Packaging loves thinking up innovative and cool ideas. Our design department designs stuff for us always tries to make packaging that’s super creative. They want it to be different and exciting, like making a surprise just for you! They believe in using clever ideas to make your things look amazing.</p>
 
-          </div>
+        </div>
 
         <InspirationGallery galleryImages={galleryImages} />
 
       </Container>
       {/**Inspiration end*/}
       {/**Simple Steps Start*/}
-        <div className='bg-[#f3f3f3]'>
+      <div className='bg-[#f3f3f3]'>
         <Container>
           <div className='text-center space-y-5 py-[50px]'>
             <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Simple Steps to get the Custom Packaging Produced</h2>
             <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative Following are few steps which provide the complete Guide.</p>
 
           </div>
-          <SimpleSteps/>
+          <SimpleSteps />
         </Container>
 
       </div>
@@ -359,53 +363,100 @@ function Home() {
       <div className='py-10 bg-review'>
         <Container>
           <div className='space-y-3 flex  flex-col justify-center items-center mb-5'>
-              <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>Customer</span>  Reviews</h2>
-              <p className='text-[#333333] md:text-lg text-sm text-left'>Real customer feedback to guide your purchase decisions.</p>
-              
-          </div>
-            <Review/>
+            <h2 className='md:text-[35px] text-lg font-extrabold text-start uppercase leading-9 '><span className='text-[#FF931E]'>Customer</span>  Reviews</h2>
+            <p className='text-[#333333] md:text-lg text-sm text-left'>Real customer feedback to guide your purchase decisions.</p>
 
-        
+          </div>
+          <Review />
+
+
         </Container>
       </div>
       {/**REVIEW SECTION end*/}
       {/**Top 10 Packaging Start*/}
       <div className='bg-[#f3f3f3]'>
-       <Container>
-  <div className="max-h-[600px] overflow-y-auto p-10">
-  <h3 className='text-4xl font-semibold mb-5'>Top 10 Packaging Design Trends for 2024:</h3>
-  <p className='text-lg font-medium leading-8 text-[#333333]'>Packaging has changed a lot since it first started as a way to keep things safe and move them around. Even though maintaining safe things is still important, some new and cool things are happening with packaging.<br/>
-Now, in the year 2024, packaging is getting even better. This is because of new technology, what people like, and the need to care for our planet.
-When a new year starts, businesses need to know the newest ways to wrap up and protect their stuff. When you get new toys or clothes, you want them to be in the coolest and best packaging! <br />
-So, in 2024, packaging is changing because of new gadgets, what people prefer, and the important job of making sure we’re kind to our Earth. It’s like a race for businesses to keep up with the latest and greatest ways to wrap things up and make them look awesome! <br />
-Hey there! So, the packaging is like the cool wrapping around stuff we buy. Back in the day, it was to keep things safe, but now it’s doing much more! <br />
-<b>1. Good for Earth:</b> People are really into using materials that are good for the Earth. This is called the “sustainability movement,” it’s like a big team effort to take care of our planet. In 2024, more and more people and companies are choosing materials that are kind to the Earth. They might use plastics that can be used repeatedly, packaging made from plants, or things that can be recycled. Suppose a company decides to use these Earth-friendly materials for their packaging. In that case, it makes people who care about the environment happy. It’s like giving a thumbs up to businesses that are good for our planet! <br />
+        <Container>
+          <div className="max-h-[600px] overflow-y-auto p-10">
+            <h3 className='text-4xl font-semibold mb-5'>Top 10 Packaging Design Trends for 2024:</h3>
+            <p className='text-lg font-medium leading-8 text-[#333333]'>Packaging has changed a lot since it first started as a way to keep things safe and move them around. Even though maintaining safe things is still important, some new and cool things are happening with packaging.<br />
+              Now, in the year 2024, packaging is getting even better. This is because of new technology, what people like, and the need to care for our planet.
+              When a new year starts, businesses need to know the newest ways to wrap up and protect their stuff. When you get new toys or clothes, you want them to be in the coolest and best packaging! <br />
+              So, in 2024, packaging is changing because of new gadgets, what people prefer, and the important job of making sure we’re kind to our Earth. It’s like a race for businesses to keep up with the latest and greatest ways to wrap things up and make them look awesome! <br />
+              Hey there! So, the packaging is like the cool wrapping around stuff we buy. Back in the day, it was to keep things safe, but now it’s doing much more! <br />
+              <b>1. Good for Earth:</b> People are really into using materials that are good for the Earth. This is called the “sustainability movement,” it’s like a big team effort to take care of our planet. In 2024, more and more people and companies are choosing materials that are kind to the Earth. They might use plastics that can be used repeatedly, packaging made from plants, or things that can be recycled. Suppose a company decides to use these Earth-friendly materials for their packaging. In that case, it makes people who care about the environment happy. It’s like giving a thumbs up to businesses that are good for our planet! <br />
 
-<b>2. Simple and Earthy Designs:</b> Imagine the cool designs on your toys or snacks. Well, in 2024, they’re choosing easy designs that remind you of nature. It’s like using calm and nice colors, not too flashy. But it’s not just about looking pretty – it’s also a way of saying, “Hey, I want to take care of our Earth!” So, when you see simple and earthy designs, it’s like a little message from the company saying they care about our planet. <br />
-<b>3. Smart Packaging:</b> Some packages are like magic! They can talk to your phone or show you cool things using special codes or pictures. <br />
-<b>4. Ink and Printing Being Earth-Friendly:</b> Even the colors and pictures on packages, try to be kind to the Earth! In 2024, the people who make the ink and print things are changing how they do it. They’re using inks made from soy, like a plant, and methods that don’t hurt the environment. This is becoming popular because it helps make packaging without causing too much trouble for our planet. <br />
-<b>5. Packaging Fun:</b> Imagine when you open a box of your favorite things; it feels like starting a super cool adventure! In 2024, companies want it to be really fun and exciting when you open their packages. It’s not just about hiding what’s inside; they want you to have a great time when you discover what’s in there. So, it’s not just a box; it’s like opening up a surprise that makes you happy and excited! <br />
-<b>6. Your Special Package:</b> People like it when things feel special just for them. Imagine if the packaging on your favorite toys or snacks had your name or a cool design just for you! In 2024, companies will use information about you, like what you like and enjoy, to make unique packaging. They use fancy printing tricks with computers to create these special packages. Getting something with your name or a special design makes you feel important and happy. So, businesses are doing this to make customers feel extra special and valued. It’s like getting a present every time you open a box! <br />
-<b>7. See-Through Labels:</b> People like to know everything about what they’re buying. So, imagine if the labels tell you everything when you pick up your favorite snacks or toys! Like where it’s from, what’s inside, and if it’s good for the Earth. In 2024, brands realize that giving all this information builds customer trust. It’s like when someone is honest and tells you everything – you trust them more, right? So, companies are putting all the details on their labels to make customers happy and feel good about what they’re getting. It’s like being a detective and finding out all the cool facts about your favorite stuff! <br />
-<b>8. Easy to Close and Use Again:</b> Some packages can close again. So, if you don’t finish all the cookies, you can keep them fresh for later. Cool, right? <br />
-<b>9. Different and Cool Shapes:</b> Imagine if your cereal box wasn’t square but had a crazy shape. That’s what brands are doing now to make things more interesting. <br />
-<b>10. Earth-Friendly Shipping:</b> Taking care of our planet isn’t just for the stores; it’s also when things get sent to your home. In 2024, using materials and sending items good for the Earth are becoming super important. And companies are figuring out how to pack things in a way that only makes a little extra waste and it’s not too expensive to send. So, when you get a package, it’s like getting a little Earth-friendly present at your doorstep!</p> <br />
-  </div>
-</Container>
+              <b>2. Simple and Earthy Designs:</b> Imagine the cool designs on your toys or snacks. Well, in 2024, they’re choosing easy designs that remind you of nature. It’s like using calm and nice colors, not too flashy. But it’s not just about looking pretty – it’s also a way of saying, “Hey, I want to take care of our Earth!” So, when you see simple and earthy designs, it’s like a little message from the company saying they care about our planet. <br />
+              <b>3. Smart Packaging:</b> Some packages are like magic! They can talk to your phone or show you cool things using special codes or pictures. <br />
+              <b>4. Ink and Printing Being Earth-Friendly:</b> Even the colors and pictures on packages, try to be kind to the Earth! In 2024, the people who make the ink and print things are changing how they do it. They’re using inks made from soy, like a plant, and methods that don’t hurt the environment. This is becoming popular because it helps make packaging without causing too much trouble for our planet. <br />
+              <b>5. Packaging Fun:</b> Imagine when you open a box of your favorite things; it feels like starting a super cool adventure! In 2024, companies want it to be really fun and exciting when you open their packages. It’s not just about hiding what’s inside; they want you to have a great time when you discover what’s in there. So, it’s not just a box; it’s like opening up a surprise that makes you happy and excited! <br />
+              <b>6. Your Special Package:</b> People like it when things feel special just for them. Imagine if the packaging on your favorite toys or snacks had your name or a cool design just for you! In 2024, companies will use information about you, like what you like and enjoy, to make unique packaging. They use fancy printing tricks with computers to create these special packages. Getting something with your name or a special design makes you feel important and happy. So, businesses are doing this to make customers feel extra special and valued. It’s like getting a present every time you open a box! <br />
+              <b>7. See-Through Labels:</b> People like to know everything about what they’re buying. So, imagine if the labels tell you everything when you pick up your favorite snacks or toys! Like where it’s from, what’s inside, and if it’s good for the Earth. In 2024, brands realize that giving all this information builds customer trust. It’s like when someone is honest and tells you everything – you trust them more, right? So, companies are putting all the details on their labels to make customers happy and feel good about what they’re getting. It’s like being a detective and finding out all the cool facts about your favorite stuff! <br />
+              <b>8. Easy to Close and Use Again:</b> Some packages can close again. So, if you don’t finish all the cookies, you can keep them fresh for later. Cool, right? <br />
+              <b>9. Different and Cool Shapes:</b> Imagine if your cereal box wasn’t square but had a crazy shape. That’s what brands are doing now to make things more interesting. <br />
+              <b>10. Earth-Friendly Shipping:</b> Taking care of our planet isn’t just for the stores; it’s also when things get sent to your home. In 2024, using materials and sending items good for the Earth are becoming super important. And companies are figuring out how to pack things in a way that only makes a little extra waste and it’s not too expensive to send. So, when you get a package, it’s like getting a little Earth-friendly present at your doorstep!</p> <br />
+          </div>
+        </Container>
 
 
       </div>
       {/**Top 10 Packaging end*/}
       {/**Frequently Asked Questions Start*/}
       <Container className='py-10'>
-        <div className='bg-[#FFD7AC] h-[65px]  relative w-full rounded'><img src={agent} width={125} height={125} alt="" className=' absolute top-[-50%] right-[50%] ' /></div>
+        <div className='bg-[#FFD7AC] h-[65px]  relative w-full rounded'><img src={agent} width={125} height={125} alt="" className=' absolute top-[-50%] right-[45%] ' /></div>
         <div className='my-10'>
-            <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center '>Frequently Asked Questions</h2>
+          <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center '>Frequently Asked Questions</h2>
 
         </div>
+
+        <div className='grid grid-cols-2 gap-4'>
+          <div>
+            <FaqCom title={"Do you offer Free Samples"} answer={"Yes, if you need any random samples to check the material and printing quality. If you need the samples of your customized box, we do not offer free samples or material kits."} />
+
+            <FaqCom title={"How can I create my design"} answer={"All you need send us your artwork and we would provide you a 3D digital Mockup of your box along with a template."} />
+
+            <FaqCom title={"Do you charge extra, based on the number of colors and ink coverage"} answer={"No, all the products are printed in full color at no extra charge."} />
+
+            <FaqCom title={"What kind of custom packaging do you offer"} answer={
+              <> Visit our Home Page to see the full range of what we are offering. Each custom packaging option has a free and easy-to-use online designer that’ll help you create attractive and unforgettable unboxing experiences. Don’t see what you’re looking for? Reach out to us at{" "}
+                <Link to="mailto:sales@umbrellapackaging.com" className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com</Link>.</>} />
+
+            <FaqCom title={"Do you have a pick-up location"} answer={
+              <>
+                Yes, we do have a pick-up location but usually we ship the orders to the doorstep. please email us at <Link to="mailto:sales@umbrellapackaging.com" className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com</Link> for more details.
+              </>
+            } />
+          </div>
+          <div>
+            <FaqCom title={"How can I reorder"} answer={"Simply, contact to the same email you contacted last time and place your reorder."} />
+
+            <FaqCom title={"What is the best way to contact you"} answer={
+              <>Contact us via email any time <Link to={"mailto:sales@umbrellapackaging.com"} className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com.</Link>  You can also DM us through Facebook or Instagram, where our team will get back to you within 24 – 48 business hours.</>
+            } />
+
+            <FaqCom title={"What is your MOQ? Do you print small order quantities"} answer={"Our MOQ is 100 boxes, yes we can offer less number of boxes for ordering."} />
+
+            <FaqCom title={"Do you print larger order quantities?"} answer={<>Yes, we have the capability to print the orders as per client’s requirements.
+              (100 – 500,000 – up to any number).</>} />
+
+            <FaqCom title={"What if my artwork has gradients?"} answer={"Gradients are handled with care so to get the desired results in printing. Firstly, there are a few initial quick sample sheets are printed to verify so to move towards the bulk run."} />
+          </div>
+
+        </div>
+
+
+
+
       </Container>
 
-      {/**Frequently Asked Questions end*/ }
+      {/**Frequently Asked Questions end*/}
+      {/**Blog Start*/}
+      <Container>
+        <div className='space-y-5'>
+           <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center '>Blog & News</h2>
+           <Blogs/>
+        </div>
+      </Container>
+      {/**Blog end*/}
 
 
 

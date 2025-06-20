@@ -31,7 +31,7 @@ function ProductCard() {
           768:{slidesPerView:3,},
           1024:{slidesPerView:5,}
         }}
-        centeredSlides={true}
+       
 
         spaceBetween={30}
         grabCursor={true}
