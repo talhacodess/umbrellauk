@@ -42,7 +42,7 @@ import { Link } from 'react-router-dom'
 import Blogs from '../../components/blog/Blogs'
 
 const categories = [
-  { title: "Window Boxes", img: windowboxes },
+  { title: "Window Boxes", img: windowboxes,url:"/sub-catgory" },
   { title: "Window Boxes", img: windowboxes },
   { title: "Window Boxes", img: windowboxes },
   { title: "Window Boxes", img: windowboxes },
@@ -148,10 +148,11 @@ function Home() {
         <div>
           <div className='grid sm:grid-cols-4 grid-cols-2 gap-3'>
             {categories.map((item, index) => {
-              return <div className='text-center space-y-3'>
+              return <Link to={item.url}> <div className='text-center space-y-3'>
                 <img src={item.img} alt={item.title} className='rounded-[10px] shadow' />
                 <p className='sm:text-[17px] text-[12px] font-semibold uppercase'>{item.title}</p>
               </div>
+              </Link>
             })}
 
           </div>
