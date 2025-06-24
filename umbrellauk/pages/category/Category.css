@@ -1,0 +1,6 @@
+.lastbanner{
+    background-image: url("../../src/assets/categorylast.jpg");
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
