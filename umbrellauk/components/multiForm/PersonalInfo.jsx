@@ -56,7 +56,7 @@ function PersonalInfo({formData,setFormData}) {
       </div>
      
     </div>
-
+     
   )
 }
 
