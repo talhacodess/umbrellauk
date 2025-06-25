@@ -3,7 +3,7 @@ import img from '../../src/assets/Shrink-Sleeves.webp';
 
 function ProductsCategory() {
   const productCat = [
-    { img, title: "Shrink Sleeves", url: 'https://umbrellapackaging.co.uk/shrink-sleeves/' },
+    { img, title: "Shrink Sleeves", url: 'single-product' },
     { img, title: "Shrink Sleeves", url: 'https://umbrellapackaging.co.uk/shrink-sleeves/' },
     { img, title: "Shrink Sleeves", url: 'https://umbrellapackaging.co.uk/shrink-sleeves/' },
     { img, title: "Shrink Sleeves", url: 'https://umbrellapackaging.co.uk/shrink-sleeves/' },
