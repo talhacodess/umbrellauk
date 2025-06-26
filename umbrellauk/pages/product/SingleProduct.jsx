@@ -3,6 +3,7 @@ import { RiStarSFill } from "react-icons/ri";
 import { IoStar } from "react-icons/io5";
 import Button from '../../components/Button';
 import Container from '../../components/Container'
+import TabsProduct from './TabsProduct';
 
 function SingleProduct() {
     const [images, setImages] = useState(
@@ -246,6 +247,16 @@ function SingleProduct() {
 
                 </Container>
             </div>
+             {/**First Section End Here*/}
+             {/**Tabs Start*/}
+
+             <Container>
+                 <TabsProduct/>
+
+             </Container>
+
+            
+             {/**Tabs End*/}
 
         </>
     )
