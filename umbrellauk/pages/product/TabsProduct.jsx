@@ -109,64 +109,102 @@ function TabsProduct() {
                 </div>
             </div>
         </div>,
-        <div>
-            <div>
-              <div className='grid grid-cols-2 justify-center items-center'>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={one} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Choose Your Custom Packaging Boxes</h6>
-                                <p className='text-sm'>Explore our range of curated retail packaging boxes to discover the packaging solution that's right for your business. If you have any questions about available custom boxes as you browse, our dedicated team is here to help. Simply click on the Live Chat Support function, which can be found in the bottom right-hand corner of your screen.</p>
-                            </div>
-                        </div>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={two} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Request a Free Instant Quote</h6>
-                                <p className='text-sm'>It's simple, speedy and free to request a quote from us - just navigate to the box at the top right-hand side of this page and let us know what you're looking for. Remember to include valuable details like box dimensions, custom options, the number of boxes you need, design ideas and internal deadlines.</p>
-                            </div>
-                        </div>
-                      
-                      
-                    </div>
-              <div className='grid grid-cols-2 justify-center items-center'>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={three} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Finalize Your Order</h6>
-                                <p className='text-sm'>As soon as we've received your request, our custom packaging specialists will prepare your tailored quote. We guarantee to come back to you within 1-2 hours on business days, so you can swiftly start your packaging journey. If you requested design help in your q   uote, then, at this point, your designated customized packaging specialist will connect with you over email or phone to finalize your vision.</p>
-                            </div>
-                        </div>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={four} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Time to Make a Custom Dieline</h6>
-                                <p className='text-sm'>In the packaging world, a dieline is an artwork template that ensures that the design of your package is laid out correctly before going into production. It is a flat diagram with markings that indicate where the package's fold and cut lines are. As soon as we've received your payment, our packaging wizards will prepare your dieline file and send it over for review within 1-2 business day</p>
-                            </div>
-                        </div>
-                      
-                      
-                    </div>
-              <div className='grid grid-cols-2 justify-center items-center'>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={one} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Choose Your Custom Packaging Boxes</h6>
-                                <p className='text-sm'>Explore our range of curated retail packaging boxes to discover the packaging solution that's right for your business. If you have any questions about available custom boxes as you browse, our dedicated team is here to help. Simply click on the Live Chat Support function, which can be found in the bottom right-hand corner of your screen.</p>
-                            </div>
-                        </div>
-                        <div className='flex justify-center items-center gap-3'>
-                            <div><img src={two} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
-                            <div className='space-y-2'>
-                                <h6 className='text-lg font-semibold'>Request a Free Instant Quote</h6>
-                                <p className='text-sm'>It's simple, speedy and free to request a quote from us - just navigate to the box at the top right-hand side of this page and let us know what you're looking for. Remember to include valuable details like box dimensions, custom options, the number of boxes you need, design ideas and internal deadlines.</p>
-                            </div>
-                        </div>
-                      
-                      
-                    </div>
-                    </div>
-        </div>,
+     <div className="space-y-6">
+  <div className="grid grid-cols-2 gap-6">
+    {/* Step 1 */}
+    <div className="flex items-start gap-4">
+      <div className=" flex items-center justify-center ">
+        <img src={one} alt="Step 1" className="w-[550px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Choose Your Custom Packaging Boxes</h6>
+        <p className="text-sm">
+          Explore our range of curated retail packaging boxes to discover the packaging solution that's right for your business. If you have any questions about available custom boxes as you browse, our dedicated team is here to help. Simply click on the Live Chat Support function, which can be found in the bottom right-hand corner of your screen.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 2 */}
+    <div className="flex items-start gap-4">
+      <div className=" flex items-center justify-center  ">
+        <img src={two} alt="Step 2" className="w-[550px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Request a Free Instant Quote</h6>
+        <p className="text-sm">
+          It's simple, speedy and free to request a quote from us - just navigate to the box at the top right-hand side of this page and let us know what you're looking for. Remember to include valuable details like box dimensions, custom options, the number of boxes you need, design ideas and internal deadlines.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 3 */}
+    <div className="flex items-start gap-4">
+      <div className=" flex items-center justify-center">
+        <img src={three} alt="Step 3" className="w-[650px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Finalize Your Order</h6>
+        <p className="text-sm">
+          As soon as we've received your request, our custom packaging specialists will prepare your tailored quote. We guarantee to come back to you within 1-2 hours on business days, so you can swiftly start your packaging journey. If you requested design help in your quote, then, at this point, your designated customized packaging specialist will connect with you over email or phone to finalize your vision.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 4 */}
+    <div className="flex items-start gap-4">
+      <div className=" flex items-center justify-center">
+        <img src={four} alt="Step 4" className="w-[700px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Time to Make a Custom Dieline</h6>
+        <p className="text-sm">
+          In the packaging world, a dieline is an artwork template that ensures that the design of your package is laid out correctly before going into production. It is a flat diagram with markings that indicate where the package's fold and cut lines are. As soon as we've received your payment, our packaging wizards will prepare your dieline file and send it over for review within 1-2 business days.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 5 */}
+    <div className="flex items-start gap-4">
+      <div className="flex items-center justify-center">
+        <img src={five} alt="Step 5" className="w-[550px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Get Creative with Artwork</h6>
+        <p className="text-sm">
+          Add your artwork to your shiny new dieline template file. Make sure to follow our Artwork Guidelines as you start designing, so we can apply the artwork to your template. These guidelines ensure that the file format and the settings of your artwork (colors, font type, font size, and images) will be ready for mass production.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 6 */}
+    <div className="flex items-start gap-4">
+      <div className=" flex items-center justify-center  ">
+        <img src={six} alt="Step 6" className="w-[900px] h-[150px] rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Visualize Your Packaging with Mockups</h6>
+        <p className="text-sm">
+          Once you're happy with your template's design, our team will prepare a 2D and 3D rendering of your packaging for a final review. This allows you to visualize precisely how your custom box will look once printed. This stage is your last opportunity to proofread the text on the box or check for grammatical, spelling, and punctuation errors before mass production, make sure to double check! If you’d like to determine whether your chosen material has the feel you want to achieve, we can ship a box sample to you.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 7 - If intentionally repeated */}
+    <div className="flex items-start gap-4">
+      <div className="= flex items-center justify-center  ">
+        <img src={seven} alt="Step 7" className="w-[550px] h-[150px]  rounded-2xl" />
+      </div>
+      <div className="space-y-2">
+        <h6 className="text-lg font-semibold">Get Creative with Artwork</h6>
+        <p className="text-sm">
+          Add your artwork to your shiny new dieline template file. Make sure to follow our Artwork Guidelines as you start designing, so we can apply the artwork to your template. These guidelines ensure that the file format and the settings of your artwork (colors, font type, font size, and images) will be ready for mass production.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+,
          <div>
           <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center mb-5'>Frequently Asked Questions</h2>
 

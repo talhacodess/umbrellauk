@@ -4,6 +4,17 @@ import { IoStar } from "react-icons/io5";
 import Button from '../../components/Button';
 import Container from '../../components/Container'
 import TabsProduct from './TabsProduct';
+import SimpleSteps from '../../components/SimpleSteps';
+import infographics from '../../src/assets/infographics-uk-1.webp'
+import wicon1 from '../../src/assets/w-icon.png'
+import wicon2 from '../../src/assets/w-icon2.png'
+import wicon3 from '../../src/assets/w-icon3.png'
+import wicon4 from '../../src/assets/w-icon4.png'
+import wicon5 from '../../src/assets/w-icon5.png'
+import wicon6 from '../../src/assets/w-icon6.png'
+import category from '../../src/assets/categoryimage.webp'
+
+import ProductCard from '../../components/products/ProductCard';
 
 function SingleProduct() {
     const [images, setImages] = useState(
@@ -257,6 +268,106 @@ function SingleProduct() {
 
             
              {/**Tabs End*/}
+              {/**How it works section sTART*/}
+
+
+      <div className='bg-[#f3f3f3] my-5 py-2'>
+        <Container>
+          <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center'>
+            <div className=''>
+              <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>How it works</h2>
+              <div className='grid md:grid-cols-3 grid-cols-2 gap-4 mt-5'>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon1} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>No Die & Plate Charges</h3>
+                </div>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon2} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>No Minimum Order Qty</h3>
+                </div>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon3} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>Free Design</h3>
+                </div>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon4} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>Quickest Turnaround</h3>
+                </div>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon5} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>Cheapest Prices</h3>
+                </div>
+                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                  <img src={wicon6} width={60} height={45} alt="" />
+                  <h3 className='font-semibold text-sm'>Free Shipping</h3>
+                </div>
+
+              </div>
+
+            </div>
+            <div className='flex justify-center items-center'><img src={infographics} alt="" width={560} height={670} /></div>
+
+          </div>
+
+        </Container>
+
+
+
+      </div>
+
+      {/**How it works section end*/}
+
+         {/**First banner Start */}
+        <div className='bg-[#ffdebf] py-5 '>
+        <Container>
+          <div className='grid sm:grid-cols-2 grid-cols-1 gap-2.5'>
+            <div className='flex flex-col space-y-4'>
+              <h3 className='text-4xl font-semibold'>How would one define Window Boxes?​</h3>
+              <div className='max-h-[300px] overflow-y-auto p-5'>
+                 <p className='sm:text-[17px] text-sm  leading-[25px] font-normal text-[#7a7a7a]'> Firstly, let’s focus on custom Window packaging boxes, what are they? We use these special boxes to protect and carry your products, from one place to another. Unlike standard boxes, they are customizable, considering factors like size, shape, material, and printing to fully fit the product they hold. All in all, custom-printed Window boxes with logos play an important role in product presentation and protection. It allows the brand to display its unique identity and branding.Moreover, personalized Window boxes create an unforgettable unboxing experience, promoting brand loyalty which inspires repeat purchases in e-commerce. A well-designed and customized Window packaging plan can help the brand stand out in the market. So, here is a chance to think about a custom Window box that should be well-designed, precisely sized, and perfectly shaped. It will take your business to new heights. Overall, whatever you are thinking, take your chance, nothing is out of our reach.</p>
+
+              </div>
+             
+              <div className='space-x-2 space-y-2 hidden sm:block p-5'>
+                <Button children={"Order Process"} className='text-white  hover:text-[#ff931e] transition-all' />
+                
+              </div>
+            </div>
+            <div className='flex justify-center'>
+              <img src={category} width={500} height={400} className='rounded-lg object-cover' alt="" />
+            </div>
+          </div>
+        </Container>
+      </div>
+      {/**First Banner End */}
+
+      {/**Simple Steps Start*/}
+      <div className='bg-[#f3f3f3]'>
+        <Container>
+          <div className='text-center space-y-5 py-[50px]'>
+            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Simple Steps to get the Custom Packaging Produced</h2>
+            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative Following are few steps which provide the complete Guide.</p>
+
+          </div>
+          <SimpleSteps />
+        </Container>
+
+      </div>
+      {/**Simple Steps end*/}
+      {/**Products Related Start*/}
+      <div className='bg-[#ffdebf]'>\
+         <div className='text-center mb-5'>
+            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Related Products</h2>
+           
+          </div>
+         <Container>
+       <ProductCard/>
+      </Container>
+
+      </div>
+     
+      {/**Products Related End*/}
+     
 
         </>
     )
