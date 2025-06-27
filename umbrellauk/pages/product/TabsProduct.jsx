@@ -5,14 +5,15 @@ import redDoted from '../../src/assets/red-doted.png'
 import redSimple from '../../src/assets/red-updated.png'
 import greenSimple from '../../src/assets/green-updated.png'
 import blackSimple from '../../src/assets/black-updated.png'
-import one from '../../src/assets/01.webp'
-import two from '../../src/assets/02.webp'
-import three from '../../src/assets/03.webp'
-import four from '../../src/assets/04.webp'
-import five from '../../src/assets/05.webp'
-import six from '../../src/assets/06.webp'
-import seven from '../../src/assets/07.webp'
+import one from '../../src/assets/01.svg'
+import two from '../../src/assets/02.svg'
+import three from '../../src/assets/03.svg'
+import four from '../../src/assets/04.svg'
+import five from '../../src/assets/05.svg'
+import six from '../../src/assets/06.svg'
+import seven from '../../src/assets/07.svg'
 import FaqCom from '../../components/FaqCom';
+import { Link } from 'react-router-dom';
 
 
 function TabsProduct() {
@@ -109,37 +110,102 @@ function TabsProduct() {
             </div>
         </div>,
         <div>
+            <div>
               <div className='grid grid-cols-2 justify-center items-center'>
                         <div className='flex justify-center items-center gap-3'>
-                            <div><img src={one} alt="" className='w-[600px] h-[150px] object-cover rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div><img src={one} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
                             <div className='space-y-2'>
                                 <h6 className='text-lg font-semibold'>Choose Your Custom Packaging Boxes</h6>
                                 <p className='text-sm'>Explore our range of curated retail packaging boxes to discover the packaging solution that's right for your business. If you have any questions about available custom boxes as you browse, our dedicated team is here to help. Simply click on the Live Chat Support function, which can be found in the bottom right-hand corner of your screen.</p>
                             </div>
                         </div>
                         <div className='flex justify-center items-center gap-3'>
-                            <div><img src={two} alt="" className='w-[600px] h-[150px] object-cover rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div><img src={two} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
                             <div className='space-y-2'>
                                 <h6 className='text-lg font-semibold'>Request a Free Instant Quote</h6>
                                 <p className='text-sm'>It's simple, speedy and free to request a quote from us - just navigate to the box at the top right-hand side of this page and let us know what you're looking for. Remember to include valuable details like box dimensions, custom options, the number of boxes you need, design ideas and internal deadlines.</p>
                             </div>
                         </div>
+                      
+                      
+                    </div>
+              <div className='grid grid-cols-2 justify-center items-center'>
                         <div className='flex justify-center items-center gap-3'>
-                            <div><img src={three} alt="" className='w-[600px] h-[150px] object-cover rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div><img src={three} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
                             <div className='space-y-2'>
                                 <h6 className='text-lg font-semibold'>Finalize Your Order</h6>
-                                <p className='text-sm'>As soon as we've received your request, our custom packaging specialists will prepare your tailored quote. We guarantee to come back to you within 1-2 hours on business days, so you can swiftly start your packaging journey. If you requested design help in your quote, then, at this point, your designated customized packaging specialist will connect with you over email or phone to finalize your vision.</p>
+                                <p className='text-sm'>As soon as we've received your request, our custom packaging specialists will prepare your tailored quote. We guarantee to come back to you within 1-2 hours on business days, so you can swiftly start your packaging journey. If you requested design help in your q   uote, then, at this point, your designated customized packaging specialist will connect with you over email or phone to finalize your vision.</p>
                             </div>
                         </div>
                         <div className='flex justify-center items-center gap-3'>
-                            <div><img src={four} alt="" className='w-[600px] h-[150px] object-cover rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div><img src={four} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
                             <div className='space-y-2'>
                                 <h6 className='text-lg font-semibold'>Time to Make a Custom Dieline</h6>
                                 <p className='text-sm'>In the packaging world, a dieline is an artwork template that ensures that the design of your package is laid out correctly before going into production. It is a flat diagram with markings that indicate where the package's fold and cut lines are. As soon as we've received your payment, our packaging wizards will prepare your dieline file and send it over for review within 1-2 business day</p>
                             </div>
                         </div>
+                      
+                      
+                    </div>
+              <div className='grid grid-cols-2 justify-center items-center'>
+                        <div className='flex justify-center items-center gap-3'>
+                            <div><img src={one} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div className='space-y-2'>
+                                <h6 className='text-lg font-semibold'>Choose Your Custom Packaging Boxes</h6>
+                                <p className='text-sm'>Explore our range of curated retail packaging boxes to discover the packaging solution that's right for your business. If you have any questions about available custom boxes as you browse, our dedicated team is here to help. Simply click on the Live Chat Support function, which can be found in the bottom right-hand corner of your screen.</p>
+                            </div>
+                        </div>
+                        <div className='flex justify-center items-center gap-3'>
+                            <div><img src={two} alt="" className=' w-full rounded-2xl border-1 border-[#0000001a]' /></div>
+                            <div className='space-y-2'>
+                                <h6 className='text-lg font-semibold'>Request a Free Instant Quote</h6>
+                                <p className='text-sm'>It's simple, speedy and free to request a quote from us - just navigate to the box at the top right-hand side of this page and let us know what you're looking for. Remember to include valuable details like box dimensions, custom options, the number of boxes you need, design ideas and internal deadlines.</p>
+                            </div>
+                        </div>
+                      
+                      
+                    </div>
                     </div>
         </div>,
+         <div>
+          <h2 className='md:text-[35px] text-lg font-semibold  uppercase leading-9 text-center mb-5'>Frequently Asked Questions</h2>
+
+       
+          <div className='grid grid-cols-2 gap-4'>
+          <div>
+            <FaqCom title={"Do you offer Free Samples"} answer={"Yes, if you need any random samples to check the material and printing quality. If you need the samples of your customized box, we do not offer free samples or material kits."} />
+
+            <FaqCom title={"How can I create my design"} answer={"All you need send us your artwork and we would provide you a 3D digital Mockup of your box along with a template."} />
+
+            <FaqCom title={"Do you charge extra, based on the number of colors and ink coverage"} answer={"No, all the products are printed in full color at no extra charge."} />
+
+            <FaqCom title={"What kind of custom packaging do you offer"} answer={
+              <> Visit our Home Page to see the full range of what we are offering. Each custom packaging option has a free and easy-to-use online designer that’ll help you create attractive and unforgettable unboxing experiences. Don’t see what you’re looking for? Reach out to us at{" "}
+                <Link to="mailto:sales@umbrellapackaging.com" className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com</Link>.</>} />
+
+            <FaqCom title={"Do you have a pick-up location"} answer={
+              <>
+                Yes, we do have a pick-up location but usually we ship the orders to the doorstep. please email us at <Link to="mailto:sales@umbrellapackaging.com" className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com</Link> for more details.
+              </>
+            } />
+          </div>
+          <div>
+            <FaqCom title={"How can I reorder"} answer={"Simply, contact to the same email you contacted last time and place your reorder."} />
+
+            <FaqCom title={"What is the best way to contact you"} answer={
+              <>Contact us via email any time <Link to={"mailto:sales@umbrellapackaging.com"} className='hover:text-[#293453] text-[#FF931E]'>sales@umbrellapackaging.com.</Link>  You can also DM us through Facebook or Instagram, where our team will get back to you within 24 – 48 business hours.</>
+            } />
+
+            <FaqCom title={"What is your MOQ? Do you print small order quantities"} answer={"Our MOQ is 100 boxes, yes we can offer less number of boxes for ordering."} />
+
+            <FaqCom title={"Do you print larger order quantities?"} answer={<>Yes, we have the capability to print the orders as per client’s requirements.
+              (100 – 500,000 – up to any number).</>} />
+
+            <FaqCom title={"What if my artwork has gradients?"} answer={"Gradients are handled with care so to get the desired results in printing. Firstly, there are a few initial quick sample sheets are printed to verify so to move towards the bulk run."} />
+          </div>
+
+        </div>
+         </div>
 
 
 
