@@ -177,7 +177,7 @@ function Header() {
       <div className='flex justify-between'>
           <nav className='md:hidden lg:block hidden'>
         <ul className='flex space-x-4 py-5'>
-          <li className='text-[15px] text-[#000] font-semibold uppercase'>Home</li>
+      <Link to={'/'}><li className='text-[15px] text-[#000] font-semibold uppercase'>Home</li></Link>
           {categories.map((item,index)=>{
             return (
 

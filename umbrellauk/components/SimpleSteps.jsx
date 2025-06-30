@@ -38,7 +38,7 @@ function SimpleSteps() {
 
 
     const contents = [
-        <div className='grid md:grid-cols-3 grid-cols-1 gap-5'>
+        <div className='grid sm:grid-cols-3 grid-cols-1 gap-5'>
             <div className='flex flex-col justify-evenly items-center border border-[#D9D9D987] bg-[#fff] rounded-[8px] p-5 shadow hover:shadow-2xl'>
 
                 <h3 className='text-xl font-bold'>Get Price Quote</h3>
@@ -157,7 +157,7 @@ function SimpleSteps() {
             <div className='grid grid-rows-1  '>
 
                 <div className=' '>
-                    <div className='flex overflow-x-auto justify-center-safe space-x-5 gap-5'>
+                    <div className='flex overflow-x-auto  space-x-5 gap-5'>
                         {tabs.map((tab, index) => (
                             <div>
                                 <Button onClick={() => setActiveTab(index)}
@@ -171,7 +171,7 @@ function SimpleSteps() {
                 </div>
 
                 <div className=' '>
-                    <div className="w-full mt-5 bg-white p-10 rounded-lg shadow">
+                    <div className=" mt-5 bg-white p-10 rounded-lg shadow">
                         {contents && contents.map((content, index) => {
                             if (activeTab === index) {
                                 return <div key={`${index}`}>{content}</div>
