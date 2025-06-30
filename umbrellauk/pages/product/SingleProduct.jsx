@@ -354,8 +354,8 @@ function SingleProduct() {
 
       </div>
       {/**Simple Steps end*/}
-      {/**Products Related Start*/}
-      <div className='bg-[#ffdebf]'>\
+      {/**Products Related Start*/}   
+      <div className='bg-[#ffdebf]'>
          <div className='text-center mb-5'>
             <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Related Products</h2>
            

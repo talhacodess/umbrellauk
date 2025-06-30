@@ -28,7 +28,7 @@ function Header() {
   const categories = [
       {
         key:1,
-        category : "Box By Industry",
+        category : "Box By Industry" ,url:"/main-cat",
         menu:[
           {title: 'Automotive Boxes', icon:icon1},
           {title: 'Apparel Boxes', icon:icon1},
@@ -181,7 +181,7 @@ function Header() {
           {categories.map((item,index)=>{
             return (
 
-              <li key={index} className='text-[15px] text-[#000] font-semibold uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
+            <Link to={item.url}>  <li key={index} className='text-[15px] text-[#000] font-semibold uppercase flex items-center' onMouseEnter={()=>{setMegaOne(item)
 
                 
                 setOpenIcon(index)
@@ -190,7 +190,7 @@ function Header() {
               onMouseLeave={()=>{setMegaOne(null)
                 setOpenIcon()
               }}
-               >{item.category} {megaOne?.key===item?.key?<IoIosArrowUp size={15} />:<IoIosArrowDown size={15} />}  </li>
+               >{item.category} {megaOne?.key===item?.key?<IoIosArrowUp size={15} />:<IoIosArrowDown size={15} />}  </li></Link>
             )
           })}
         
