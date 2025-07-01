@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,15 +13,15 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 //images 
 import img from '../../src/assets/Shrink-Sleeves.webp'
 
+import axios from 'axios';
+
 function ProductCard() {
-    const products = [
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-        {img:img,title:"Shrink Sleeves",url:'https://umbrellapackaging.co.uk/shrink-sleeves/'},
-    ]
+  const [products, setProducts] = useState([]);
+  useEffect(()=>{
+    axios.get("http://localhost:5000/products")
+    .then((response => setProducts(response.data)))
+    .catch(error => console.error("Error fetching products:", error))
+  },[]);
   return (
     <div>
           <Swiper
