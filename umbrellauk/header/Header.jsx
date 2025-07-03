@@ -194,7 +194,7 @@ function Header() {
             )
           })}
         
-         <Link > <li className='text-[15px] text-[#000] font-semibold uppercase'>Portfolio</li></Link>
+         <Link to={'/portfolio'} > <li className='text-[15px] text-[#000] font-semibold uppercase'>Portfolio</li></Link>
           <li className='text-[15px] text-[#000] font-semibold uppercase'>Blog</li>
        <Link >    <li className='text-[15px] text-[#000] font-semibold uppercase'>About Us</li></Link>
          <Link > <li className='text-[15px] text-[#000] font-semibold uppercase'>Contact Us</li></Link>
