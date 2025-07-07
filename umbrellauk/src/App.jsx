@@ -8,6 +8,8 @@ import { Route, Routes } from 'react-router-dom'
 import MainCat from '../pages/mainCategory/MainCat'
 import Portfolio from '../pages/portfolio/Portfolio'
 import AboutUs from '../pages/aboutus/AboutUs'
+import ContactUs from '../pages/contactUs/ContactUs'
+import FAQ from '../pages/FAQ'
 
 
 
@@ -23,6 +25,8 @@ function App() {
       <Route path='/single-product' element={<SingleProduct/>} />
       <Route path='/portfolio' element={<Portfolio/>} />
       <Route path='/about-us' element={<AboutUs/>} />
+      <Route path='/contact-us' element={<ContactUs/>} />
+      <Route path='/faq' element={<FAQ/>} />
       
 
       

@@ -112,7 +112,7 @@ function AboutUs() {
                 <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
                   <img src={wicon1} width={60} height={45} alt="" />
                   <h3 className='font-semibold text-sm text-center'>No Die & Plate Charges</h3>
-                </div>
+                </div> 
                 <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
                   <img src={wicon2} width={60} height={45} alt="" />
                   <h3 className='font-semibold text-sm text-center'>No Minimum Order Qty</h3>
