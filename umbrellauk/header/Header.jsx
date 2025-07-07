@@ -199,7 +199,7 @@ function Header() {
               <Link to={'/portfolio'} > <li className='text-[15px] text-[#000] font-semibold uppercase'>Portfolio</li></Link>
               <li className='text-[15px] text-[#000] font-semibold uppercase'>Blog</li>
               <Link to={"/about-us"} ><li className='text-[15px] text-[#000] font-semibold uppercase'>About Us</li></Link>
-              <Link > <li className='text-[15px] text-[#000] font-semibold uppercase'>Contact Us</li></Link>
+              <Link to={"/contact-us"} > <li className='text-[15px] text-[#000] font-semibold uppercase'>Contact Us</li></Link>
             </ul>
 
 
