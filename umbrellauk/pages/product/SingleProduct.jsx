@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiStarSFill } from "react-icons/ri";
 import { IoStar } from "react-icons/io5";
 import Button from '../../components/Button';
@@ -13,19 +13,20 @@ import wicon4 from '../../src/assets/w-icon4.png'
 import wicon5 from '../../src/assets/w-icon5.png'
 import wicon6 from '../../src/assets/w-icon6.png'
 import category from '../../src/assets/categoryimage.webp'
+import { data, useParams } from 'react-router-dom';
 
 import ProductCard from '../../components/products/ProductCard';
+import axios from 'axios';
 
 function SingleProduct() {
-    const [images, setImages] = useState(
-        {
-            img1: "https://umbrellapackaging.com/wp-content/uploads/2024/04/Apparel-Gift-Boxes.webp",
-            img2: "https://umbrellapackaging.com/wp-content/uploads/2024/04/Custom-Printed-Apparel-Gift-Boxes.webp",
-            img3: "https://umbrellapackaging.com/wp-content/uploads/2024/04/Customized-Apparel-Gift-Boxes.webp",
-            img4: "https://umbrellapackaging.com/wp-content/uploads/2024/05/Custom-Printed-Bakery-Gift-Boxes-.webp"
-        }
-    )
-    const [activeImage, setActiveImage] = useState(images.img1)
+    const [images, setImages] = useState({});
+    const {id} = useParams();
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/products/${id}`)
+        .then((response => setImages(response.data)))
+        .catch(error => console.error("Error fetching product images:", error))
+    },[]);
+    const [activeImage, setActiveImage] = useState(images.img)
     return (
         <>
             {/**First Section*/}
@@ -35,7 +36,7 @@ function SingleProduct() {
                     <div className='grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center' >
                         <div className=''>
                             <div className='flex flex-col gap-5'>
-                                <img src={activeImage} alt="" className='w-full h-full aspect-square object-cover rounded-[8px]' />
+                                <img src={images.img} alt="" className='w-full h-full aspect-square object-cover rounded-[8px]' />
 
                                 <div className='flex flex-row  justify-center  h-24 flex-wrap gap-5 space-x-5'>
                                     <img src={images.img1} alt="" className='w-35 h-35 rounded-[8px]' onClick={() => setActiveImage(images.img1)} />
@@ -50,7 +51,7 @@ function SingleProduct() {
                         </div>
                         <div className=''>
                             <div className='space-y-4'>
-                                <h2 className='text-4xl font-semibold'>Custom Debossing Boxes</h2>
+                                <h2 className='text-4xl font-semibold'>{images.title}</h2>
                                 <div className='flex space-x-1.5  items-center'>{[...Array(5)].map((_, i) => (
                                     <IoStar key={i} color='orange' />
                                 ))} <span className='font-medium text-sm'>View All Review</span></div>

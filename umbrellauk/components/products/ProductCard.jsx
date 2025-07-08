@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -42,7 +43,7 @@ function ProductCard() {
            return <SwiperSlide>
             <div className='flex flex-col p-5 border-1 border-[#D9D9D9E0] rounded-lg text-start space-y-4 bg-white'>
                 <img src={product.img} alt={product.title} className='rounded-lg'/>
-                <h2 className='text-lg font-semibold'>{product.title}</h2>
+              <Link to={`/single-product/${product._id}`}> <h2 className='text-lg font-semibold'>{product.title}</h2></Link>
               <p className='text-sm text-[#ff931e] font-semibold'>Read More</p>
             
             </div>
