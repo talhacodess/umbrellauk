@@ -10,6 +10,8 @@ import Portfolio from '../pages/portfolio/Portfolio'
 import AboutUs from '../pages/aboutus/AboutUs'
 import ContactUs from '../pages/contactUs/ContactUs'
 import FAQ from '../pages/FAQ'
+import Signup from '../pages/signup/Signup'
+import Login from '../pages/login/Login'
 
 
 
@@ -27,6 +29,8 @@ function App() {
       <Route path='/about-us' element={<AboutUs/>} />
       <Route path='/contact-us' element={<ContactUs/>} />
       <Route path='/faq' element={<FAQ/>} />
+      <Route path='/sign-up' element={<Signup/>} />
+      <Route path='/login' element={<Login/>} />
       
 
       
