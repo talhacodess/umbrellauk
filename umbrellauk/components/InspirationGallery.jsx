@@ -3,6 +3,7 @@ import '../styles/GalleryInspiration.css'
 import { IoClose } from "react-icons/io5";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
+import ReactImageMagnify from 'react-image-magnify';
 
 function InspirationGallery({galleryImages}) {
     const [sliderNumber,setSliderNumber] = useState(0)
@@ -17,6 +18,7 @@ function InspirationGallery({galleryImages}) {
 
     const prevSlide = ()=>{
         sliderNumber === 0 ? setSliderNumber(galleryImages.length -1) : setSliderNumber(sliderNumber -1) 
+    
         
     }
     const nextSlide = ()=>{

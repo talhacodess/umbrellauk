@@ -14,36 +14,120 @@ import wicon5 from '../../src/assets/w-icon5.png'
 import wicon6 from '../../src/assets/w-icon6.png'
 import category from '../../src/assets/categoryimage.webp'
 import { data, useParams } from 'react-router-dom';
+import { FaCircleArrowLeft } from "react-icons/fa6";
+import { FaCircleArrowRight } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
 
 import ProductCard from '../../components/products/ProductCard';
 import axios from 'axios';
+import ReactImageMagnify from 'react-image-magnify';
 
 function SingleProduct() {
-    const [images, setImages] = useState({});
-    const {id} = useParams();
-    useEffect(()=>{
+    const [product, setProduct] = useState({});
+    const [activeImage, setActiveImage] = useState('');
+    const { id } = useParams();
+    const [openModel, setOpenModel] = useState(false);
+    const [sliderNumber, setSliderNumber] = useState(0);
+
+    const handleOpenModel = () => {
+        setOpenModel(true);
+    }
+
+    const handleNextImage = () => {
+        setSliderNumber(prev => {
+            const newIndex = (prev + 1) % product.img.length;
+            setActiveImage(product.img[newIndex]);
+            return newIndex;
+        });
+    };
+
+    const handlePrevImage = () => {
+        setSliderNumber(prev => {
+            const newIndex = (prev - 1 + product.img.length) % product.img.length;
+            setActiveImage(product.img[newIndex]);
+            return newIndex;
+        });
+    };
+
+    const handleCloseBTn = () => {
+        setOpenModel(false)
+    }
+    useEffect(() => {
         axios.get(`http://localhost:5000/products/${id}`)
-        .then((response => setImages(response.data)))
-        .catch(error => console.error("Error fetching product images:", error))
-    },[]);
-    const [activeImage, setActiveImage] = useState(images.img)
+            .then((response) => {
+                setProduct(response.data);
+                setActiveImage(response.data.img[0]);
+
+            })
+            .catch(error => console.error("Error fetching product images:", error))
+    }, [id]);
+
+
     return (
         <>
+            {openModel &&
+                <div className='inset-0  bg-[#000] h-screen fixed  top-0 left-0 z-50 flex justify-center items-center'>
+
+
+
+                    <IoClose className=' absolute top-10 right-20 text-4xl' color='white' onClick={() => handleCloseBTn()} />
+                    <FaCircleArrowLeft color='white' className='absolute left-20  top-[50%] text-4xl' onClick={() => handlePrevImage()} />
+                    <FaCircleArrowRight color='white' className='absolute right-20  0 top-[50%] text-4xl' onClick={() => handleNextImage()} />
+
+
+
+                    <img src={activeImage} alt="" />
+
+
+
+
+
+                </div>
+            }
             {/**First Section*/}
             <div className='bg-[#f7f7f7]'>
                 <Container>
 
+
+
                     <div className='grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center' >
+
                         <div className=''>
+
                             <div className='flex flex-col gap-5'>
-                                <img src={images.img} alt="" className='w-full h-full aspect-square object-cover rounded-[8px]' />
+                               
+                                <ReactImageMagnify
+                                 onClick={() => handleOpenModel()} alt="" className='w-full h-full aspect-square object-cover rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
+                                    {...{
+                                        smallImage: {
+                                            alt: 'Product Image',
+                                            isFluidWidth: true,
+                                            src: activeImage,
+                    
+                                        },
+                                        largeImage: {
+                                            src: activeImage,
+                                            width: 1500,
+                                            height: 1500,
+                                        },
+                                        enlargedImageContainerStyle: { zIndex: 9999 },
+                                        enlargedImageContainerDimensions: {
+                                            width: '100%',
+                                            height: '100%',
+                                        },
+                                    }}
+                                />
 
-                                <div className='flex flex-row  justify-center  h-24 flex-wrap gap-5 space-x-5'>
-                                    <img src={images.img1} alt="" className='w-35 h-35 rounded-[8px]' onClick={() => setActiveImage(images.img1)} />
-                                    <img src={images.img2} alt="" className='w-35 h-35 rounded-[8px]' onClick={() => setActiveImage(images.img2)} />
-                                    <img src={images.img3} alt="" className='w-35 h-35 rounded-[8px]' onClick={() => setActiveImage(images.img3)} />
-                                    <img src={images.img4} alt="" className='w-35 h-35 rounded-[8px]' onClick={() => setActiveImage(images.img4)} />
-
+                                <div className='flex flex-row  justify-  h-24 flex-wrap gap-5 space-x-5'>
+                                    {product.img && product.img.map((image, index) => (
+                                        <img
+                                            src={image}
+                                            alt=""
+                                            key={index}
+                                            className='w-32 h-32 rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
+                                            onClick={() => setActiveImage(image)}
+                                        />
+                                    ))}
 
                                 </div>
                             </div>
@@ -51,7 +135,7 @@ function SingleProduct() {
                         </div>
                         <div className=''>
                             <div className='space-y-4'>
-                                <h2 className='text-4xl font-semibold'>{images.title}</h2>
+                                <h2 className='text-4xl font-semibold'>{product.title}</h2>
                                 <div className='flex space-x-1.5  items-center'>{[...Array(5)].map((_, i) => (
                                     <IoStar key={i} color='orange' />
                                 ))} <span className='font-medium text-sm'>View All Review</span></div>
@@ -245,7 +329,7 @@ function SingleProduct() {
                                             placeholder='Tell us the size/ dimensions, material, finishing, add-ons, and design preferences.'
                                             className='w-full rounded-[8px]  border-[#d9d9d987] border bg-white placeholder:text-[#49494987] placeholder:p-4  placeholder:font-semibold placeholder:text-sm'></textarea>
                                     </div>
-                                    <div className=''><Button className='w-full text-white' children={"Request a Quote"}/></div>
+                                    <div className=''><Button className='w-full text-white' children={"Request a Quote"} /></div>
                                 </form>
                             </div>
 
@@ -259,116 +343,116 @@ function SingleProduct() {
 
                 </Container>
             </div>
-             {/**First Section End Here*/}
-             {/**Tabs Start*/}
+            {/**First Section End Here*/}
+            {/**Tabs Start*/}
 
-             <Container>
-                 <TabsProduct/>
+            <Container>
+                <TabsProduct />
 
-             </Container>
-
-            
-             {/**Tabs End*/}
-              {/**How it works section sTART*/}
+            </Container>
 
 
-      <div className='bg-[#f3f3f3] my-5 py-2'>
-        <Container>
-          <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center'>
-            <div className=''>
-              <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>How it works</h2>
-              <div className='grid md:grid-cols-3 grid-cols-2 gap-4 mt-5'>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon1} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>No Die & Plate Charges</h3>
-                </div>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon2} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>No Minimum Order Qty</h3>
-                </div>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon3} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>Free Design</h3>
-                </div>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon4} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>Quickest Turnaround</h3>
-                </div>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon5} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>Cheapest Prices</h3>
-                </div>
-                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
-                  <img src={wicon6} width={60} height={45} alt="" />
-                  <h3 className='font-semibold text-sm'>Free Shipping</h3>
-                </div>
+            {/**Tabs End*/}
+            {/**How it works section sTART*/}
 
-              </div>
+
+            <div className='bg-[#f3f3f3] my-5 py-2'>
+                <Container>
+                    <div className='grid md:grid-cols-2 grid-cols-1 justify-center items-center'>
+                        <div className=''>
+                            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>How it works</h2>
+                            <div className='grid md:grid-cols-3 grid-cols-2 gap-4 mt-5'>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon1} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>No Die & Plate Charges</h3>
+                                </div>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon2} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>No Minimum Order Qty</h3>
+                                </div>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon3} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>Free Design</h3>
+                                </div>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon4} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>Quickest Turnaround</h3>
+                                </div>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon5} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>Cheapest Prices</h3>
+                                </div>
+                                <div className='shadow  rounded-lg p-5 flex flex-col justify-center items-center bg-white space-y-4 hover:shadow-xl cursor-auto'>
+                                    <img src={wicon6} width={60} height={45} alt="" />
+                                    <h3 className='font-semibold text-sm'>Free Shipping</h3>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div className='flex justify-center items-center'><img src={infographics} alt="" width={560} height={670} /></div>
+
+                    </div>
+
+                </Container>
+
+
 
             </div>
-            <div className='flex justify-center items-center'><img src={infographics} alt="" width={560} height={670} /></div>
 
-          </div>
+            {/**How it works section end*/}
 
-        </Container>
+            {/**First banner Start */}
+            <div className='bg-[#ffdebf] py-5 '>
+                <Container>
+                    <div className='grid sm:grid-cols-2 grid-cols-1 gap-2.5'>
+                        <div className='flex flex-col space-y-4'>
+                            <h3 className='text-4xl font-semibold'>How would one define Window Boxes?​</h3>
+                            <div className='max-h-[300px] overflow-y-auto p-5'>
+                                <p className='sm:text-[17px] text-sm  leading-[25px] font-normal text-[#7a7a7a]'> Firstly, let’s focus on custom Window packaging boxes, what are they? We use these special boxes to protect and carry your products, from one place to another. Unlike standard boxes, they are customizable, considering factors like size, shape, material, and printing to fully fit the product they hold. All in all, custom-printed Window boxes with logos play an important role in product presentation and protection. It allows the brand to display its unique identity and branding.Moreover, personalized Window boxes create an unforgettable unboxing experience, promoting brand loyalty which inspires repeat purchases in e-commerce. A well-designed and customized Window packaging plan can help the brand stand out in the market. So, here is a chance to think about a custom Window box that should be well-designed, precisely sized, and perfectly shaped. It will take your business to new heights. Overall, whatever you are thinking, take your chance, nothing is out of our reach.</p>
 
+                            </div>
 
+                            <div className='space-x-2 space-y-2 hidden sm:block p-5'>
+                                <Button children={"Order Process"} className='text-white  hover:text-[#ff931e] transition-all' />
 
-      </div>
-
-      {/**How it works section end*/}
-
-         {/**First banner Start */}
-        <div className='bg-[#ffdebf] py-5 '>
-        <Container>
-          <div className='grid sm:grid-cols-2 grid-cols-1 gap-2.5'>
-            <div className='flex flex-col space-y-4'>
-              <h3 className='text-4xl font-semibold'>How would one define Window Boxes?​</h3>
-              <div className='max-h-[300px] overflow-y-auto p-5'>
-                 <p className='sm:text-[17px] text-sm  leading-[25px] font-normal text-[#7a7a7a]'> Firstly, let’s focus on custom Window packaging boxes, what are they? We use these special boxes to protect and carry your products, from one place to another. Unlike standard boxes, they are customizable, considering factors like size, shape, material, and printing to fully fit the product they hold. All in all, custom-printed Window boxes with logos play an important role in product presentation and protection. It allows the brand to display its unique identity and branding.Moreover, personalized Window boxes create an unforgettable unboxing experience, promoting brand loyalty which inspires repeat purchases in e-commerce. A well-designed and customized Window packaging plan can help the brand stand out in the market. So, here is a chance to think about a custom Window box that should be well-designed, precisely sized, and perfectly shaped. It will take your business to new heights. Overall, whatever you are thinking, take your chance, nothing is out of our reach.</p>
-
-              </div>
-             
-              <div className='space-x-2 space-y-2 hidden sm:block p-5'>
-                <Button children={"Order Process"} className='text-white  hover:text-[#ff931e] transition-all' />
-                
-              </div>
+                            </div>
+                        </div>
+                        <div className='flex justify-center'>
+                            <img src={category} width={500} height={400} className='rounded-lg object-cover' alt="" />
+                        </div>
+                    </div>
+                </Container>
             </div>
-            <div className='flex justify-center'>
-              <img src={category} width={500} height={400} className='rounded-lg object-cover' alt="" />
+            {/**First Banner End */}
+
+            {/**Simple Steps Start*/}
+            <div className='bg-[#f3f3f3]'>
+                <Container>
+                    <div className='text-center space-y-5 py-[50px]'>
+                        <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Simple Steps to get the Custom Packaging Produced</h2>
+                        <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative Following are few steps which provide the complete Guide.</p>
+
+                    </div>
+                    <SimpleSteps />
+                </Container>
+
             </div>
-          </div>
-        </Container>
-      </div>
-      {/**First Banner End */}
+            {/**Simple Steps end*/}
+            {/**Products Related Start*/}
+            <div className='bg-[#ffdebf]'>
+                <div className='text-center mb-5'>
+                    <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Related Products</h2>
 
-      {/**Simple Steps Start*/}
-      <div className='bg-[#f3f3f3]'>
-        <Container>
-          <div className='text-center space-y-5 py-[50px]'>
-            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Simple Steps to get the Custom Packaging Produced</h2>
-            <p className='sm:text-[18px] text-[14px]  leading-[25px] font-normal text-[#7a7a7a]'>Give our new and creative Following are few steps which provide the complete Guide.</p>
+                </div>
+                <Container>
+                    <ProductCard />
+                </Container>
 
-          </div>
-          <SimpleSteps />
-        </Container>
+            </div>
 
-      </div>
-      {/**Simple Steps end*/}
-      {/**Products Related Start*/}   
-      <div className='bg-[#ffdebf]'>
-         <div className='text-center mb-5'>
-            <h2 className='sm:text-[36px] text-[25px] sm:leading-[40px] leading-[30px] font-semibold'>Related Products</h2>
-           
-          </div>
-         <Container>
-       <ProductCard/>
-      </Container>
+            {/**Products Related End*/}
 
-      </div>
-     
-      {/**Products Related End*/}
-     
 
         </>
     )
