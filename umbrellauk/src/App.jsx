@@ -12,6 +12,8 @@ import ContactUs from '../pages/contactUs/ContactUs'
 import FAQ from '../pages/FAQ'
 import Signup from '../pages/signup/Signup'
 import Login from '../pages/login/Login'
+import BlogGrid from '../components/blog/BlogGrid'
+import SingleBlog from '../pages/blog/SingleBlog'
 
 
 
@@ -29,6 +31,8 @@ function App() {
       <Route path='/about-us' element={<AboutUs/>} />
       <Route path='/contact-us' element={<ContactUs/>} />
       <Route path='/faq' element={<FAQ/>} />
+      <Route path='/blogs' element={<BlogGrid/>} />
+      <Route path='/single-blog' element={<SingleBlog/>} />
       <Route path='/sign-up' element={<Signup/>} />
       <Route path='/login' element={<Login/>} />
       

@@ -17,6 +17,7 @@ import { data, useParams } from 'react-router-dom';
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { FiZoomIn } from "react-icons/fi";
 
 import ProductCard from '../../components/products/ProductCard';
 import axios from 'axios';
@@ -90,41 +91,45 @@ function SingleProduct() {
 
 
 
-                    <div className='grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center' >
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center' >
 
                         <div className=''>
 
                             <div className='flex flex-col gap-5'>
-                               
-                                <ReactImageMagnify
-                                 onClick={() => handleOpenModel()} alt="" className='w-full h-full aspect-square object-cover rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
+                               <div style={{width:'100%'}} className='relative'>
+                                <FiZoomIn className='absolute z-30 left-5 top-5 text-white' size={30}  onClick={() => handleOpenModel()}/>
+
+                                 <ReactImageMagnify
+                                
+                                  className='w-full h-full aspect-square object-cover rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
                                     {...{
                                         smallImage: {
                                             alt: 'Product Image',
                                             isFluidWidth: true,
                                             src: activeImage,
+                                            width:140,
+                                            height:140,
                     
                                         },
                                         largeImage: {
                                             src: activeImage,
-                                            width: 1500,
-                                            height: 1500,
+                                            width: 836,
+                                            height: 1100,
                                         },
-                                        enlargedImageContainerStyle: { zIndex: 9999 },
-                                        enlargedImageContainerDimensions: {
-                                            width: '100%',
-                                            height: '100%',
-                                        },
+                                        enlargedImagePosition: 'over',
+                                        lensStyle: { backgroundColor: 'rgba(255, 147, 30, 0.5)' },
                                     }}
                                 />
+                               </div>
+                               
 
-                                <div className='flex flex-row  justify-  h-24 flex-wrap gap-5 space-x-5'>
+                                <div className='flex flex-row h-24 flex-wrap gap-5 '>
                                     {product.img && product.img.map((image, index) => (
                                         <img
                                             src={image}
                                             alt=""
                                             key={index}
-                                            className='w-32 h-32 rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
+                                            className='sm:w-32 sm:h-32 w-14 h-14 rounded-[8px] cursor-pointer border-2 border-transparent hover:border-[#ff931e] transition'
                                             onClick={() => setActiveImage(image)}
                                         />
                                     ))}
