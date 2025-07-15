@@ -2,15 +2,29 @@ import React from 'react'
 import Container from '../Container'
 import { Link } from 'react-router-dom'
 import img from '../../src/assets/blog-img.jpg'
-const blogData = [
-    { mainImg: img, title: "Exploring Atlanta’s modern homes", excerpt: "Vivamus enim sagittis aptent hac mi dui a per aptent suspendisse cras odio bibendum augue rhoncus laoreet dui praesent sodales", url: 'https://umbrellapackaging.co.uk/exploring-atlantas-modern-homes/' },
-    { mainImg: img, title: "Exploring Atlanta’s modern homes", excerpt: "Vivamus enim sagittis aptent hac mi dui a per aptent suspendisse cras odio bibendum augue rhoncus laoreet dui praesent sodales", url: 'https://umbrellapackaging.co.uk/exploring-atlantas-modern-homes/' },
-    { mainImg: img, title: "Exploring Atlanta’s modern homes", excerpt: "Vivamus enim sagittis aptent hac mi dui a per aptent suspendisse cras odio bibendum augue rhoncus laoreet dui praesent sodales", url: 'https://umbrellapackaging.co.uk/exploring-atlantas-modern-homes/' },
-    { mainImg: img, title: "Exploring Atlanta’s modern homes", excerpt: "Vivamus enim sagittis aptent hac mi dui a per aptent suspendisse cras odio bibendum augue rhoncus laoreet dui praesent sodales", url: 'https://umbrellapackaging.co.uk/exploring-atlantas-modern-homes/' },
-    { mainImg: img, title: "Exploring Atlanta’s modern homes", excerpt: "Vivamus enim sagittis aptent hac mi dui a per aptent suspendisse cras odio bibendum augue rhoncus laoreet dui praesent sodales", url: 'https://umbrellapackaging.co.uk/exploring-atlantas-modern-homes/' },
-]
+import axios from 'axios'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function BlogGrid() {
+    const  [blogs, setBlogs] = useState([]);
+    const {id} = useParams();
+   useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const response =  await axios.get(`http://localhost:5000/blogs`)
+                setBlogs(response.data);
+
+            }catch (error){
+                console.error("Error fetching blogs:", error);
+            }
+        }
+          fetchBlogs();
+    },[id])
+  
+
+    
     return (
         <>
             {/**Main banner Blog Start */}
@@ -31,16 +45,16 @@ function BlogGrid() {
             <Container>
 
                 <div className='grid sm:grid-cols-3  grid-cols-1 gap-5 my-10'>
-                    {blogData.map((blog, index) => {
+                    {blogs.map((blog, index) => {
 
                       return  <div className='flex flex-col justify-center items-center border border-[#D9D9D9] rounded-lg text-start   bg-[#f3f3f3] group'>
                             <div className=' overflow-hidden'>
-                                <img src={blog.mainImg} alt="" className='  transition-transform duration-500 group-hover:scale-110 group-hover:rounded-lg group-hover:opacity-100' />
+                                <img src={blog.img} alt="" className='  transition-transform duration-500 group-hover:scale-110 group-hover:rounded-lg group-hover:opacity-100' />
                             </div>
                             <div className='p-3 text-center space-y-3'>
                                 <h2 className='sm:text-2xl text-lg  font-semibold'>{blog.title}</h2>
-                                <p className='text-[#333333] text-lg'>{blog.excerpt}</p>
-                                <Link to={blog.url}><p className='text-[#FF931E] font-semibold'>Continue Reading</p></Link>
+                                <p className='text-[#333333] text-lg'>{blog.description}</p>
+                                <Link to={`/single-blog/${blog._id}`}><p className='text-[#FF931E] font-semibold'>Continue Reading</p></Link>
                             </div>
 
 

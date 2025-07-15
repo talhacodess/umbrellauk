@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import banner from '../../src/assets/banner-blog.jpg';
 import Button from '../../components/Button';
 import Container from '../../components/Container';
 import { IoIosArrowDown } from "react-icons/io";
 import related from '../../src/assets/related.jpg'
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 // Table of Contents Component
 const TableOfContents = ({ open, toggle }) => (
@@ -28,6 +30,7 @@ const TableOfContents = ({ open, toggle }) => (
   </div>
 );
 
+
 // Related Blogs Component
 const RelatedBlogs = () => (
   <div>
@@ -42,30 +45,37 @@ const RelatedBlogs = () => (
 // Main SingleBlog Component
 function SingleBlog() {
   const [openTable, setTableOpen] = useState(true);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const {id} = useParams();
+  useEffect(()=>{
+  axios.get(`http://localhost:5000/blogs/${id}`)
+    .then(response => {
+      setBlogs(response.data);
+      setLoading(false);
+      console.log('Blogs fetched successfully:', response.data);
+    })
+    .catch(error => {
+      console.error('Error fetching blogs:', error);
+    })
+
+},[id]);
 
   return (
     <Container>
+  
       <div className='grid grid-cols-12 gap-5'>
         {/* Main Blog Content */}
         <div className='col-span-12 md:col-span-9 space-y-5'>
-          <h1 className='md:text-[35px] text-[22px] font-semibold'>What Are Packaging Inserts?</h1>
-          <img src={banner} className='rounded-[8px]' alt="Packaging Inserts Banner" />
+          <h1 className='md:text-[35px] text-[22px] font-semibold'>{blogs.title}</h1>
+          <img src={blogs.img} className='rounded-[8px]' alt="Packaging Inserts Banner" />
           <div className='flex justify-end'>
             <Button className='w-full text-white'>Get A Quote</Button>
           </div>
 
           <div className='space-y-4'>
-            <p className='sm:text-[18px] text-[14px] leading-[25px] font-normal text-[#7a7a7a]'>
-              Packaging inserts are extra items that companies put inside a package along with the main product. These inserts include thank-you notes, discount coupons, free samples, instruction manuals, or even small gifts. Companies add them to make customers happy, provide helpful information, and encourage people to buy again.
-            </p>
-
-            <p className='sm:text-[18px] text-[14px] leading-[25px] font-normal text-[#7a7a7a]'>
-              Moreover, packaging inserts also play an important role in social marketing because they help customers connect with your brand across different platforms. As a result, more people can discover your brand, which increases visibility and attracts new customers.
-            </p>
-
-            <p className='sm:text-[18px] text-[14px] leading-[25px] font-normal text-[#7a7a7a]'>
-              Finally, custom packaging inserts make the unboxing experience even more exciting. High-quality packaging and personalized inserts create a special moment for customers when they open their package. Not only does this help businesses keep their customers happy and encourage repeat purchases, but it boosts marketing efforts.
-            </p>
+            <p className='sm:text-[18px] text-[14px] leading-[25px] font-normal text-[#7a7a7a]'>{blogs.description}</p>
+           
           </div>
         </div>
 

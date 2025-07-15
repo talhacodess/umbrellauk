@@ -3,6 +3,7 @@ import React from 'react'
 
 function PersonalInfo({formData,setFormData}) {
 
+  console.log(formData, 'formData in PersonalInfo');
 
   return (
     <div className='grid grid-cols-2 text-[14px] gap-1 space-y-4'>

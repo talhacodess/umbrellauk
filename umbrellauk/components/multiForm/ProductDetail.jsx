@@ -1,6 +1,7 @@
 import React from 'react'
 
 function ProductDetail({ formData, setFormData }) {
+  console.log(formData, 'formData in ProductDetail');
   return (
     <form action="">
       <div className=' grid md:grid-cols-5 grid-cols-3 text-[14px] gap-1 space-y-3 '>
@@ -146,30 +147,30 @@ function ProductDetail({ formData, setFormData }) {
   </label>
 
   <div className="flex items-center space-x-4">
-    <label
-      htmlFor="file-upload"
-      onChange={(e)=>setFormData({...formData, uploadBox: e.target.value})}
-      value={formData.uploadBox}
-      className="cursor-pointer inline-block bg-[#293453] text-white px-4 py-2 rounded-lg shadow-sm hover:bg-[#ff931e] transition-colors"
-    >
-      Choose File
-    </label>
+  <label
+    htmlFor="file-upload"
+    className="cursor-pointer inline-block bg-[#293453] text-white px-4 py-2 rounded-lg shadow-sm hover:bg-[#ff931e] transition-colors"
+  >
+    Choose File
+  </label>
 
-    <span id="file-name" className="text-sm text-gray-600">
-      No file chosen
-    </span>
+  <span id="file-name" className="text-sm text-gray-600">
+    {formData.uploadBox ? formData.uploadBox : "No file chosen"}
+  </span>
 
-    <input
-      id="file-upload"
-      type="file"
-      accept=".png,.pdf,.jpg,.jpeg,.webp"
-      className="hidden"
-      onChange={(e) => {
-        const fileName = e.target.files[0]?.name || "No file chosen";
-        document.getElementById("file-name").textContent = fileName;
-      }}
-    />
-  </div>
+  <input
+    id="file-upload"
+    type="file"
+    accept=".png,.pdf,.jpg,.jpeg,.webp"
+    className="hidden"
+    onChange={(e) => {
+      const file = e.target.files[0];
+      const fileName = file ? file.name : "No file chosen";
+      setFormData({ ...formData, uploadBox: fileName });
+    }}
+  />
+</div>
+
 </div>
 
 
